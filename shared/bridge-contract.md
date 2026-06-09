@@ -2,7 +2,7 @@
 
 All bridge scripts:
 
-- run from the installed package root or a source checkout root
+- run from the installed package root or from a source checkout root
 - accept code through argv, `--stdin`, or `--file`
 - return JSON on stdout for success
 - return JSON on stderr with non-zero exit for failure
@@ -46,7 +46,7 @@ python tools/cleanup_bridges.py --kill stale --older-than 60
 python tools/cleanup_bridges.py --app indesign --kill all
 ```
 
-The cleanup tool matches checked-in `*_bridge.py` paths and ignores unrelated Python processes.
+The cleanup tool matches checked-in `*_bridge.py` paths, then ignores unrelated Python processes.
 
 COM-backed bridges run the app call in a watchdog subprocess by default. If the host app blocks inside COM, the bridge should return JSON timeout failure instead of hanging indefinitely. Use `--timeout <seconds>` on the app bridge to adjust the watchdog, or `--timeout 0` only when deliberately allowing a long COM operation.
 

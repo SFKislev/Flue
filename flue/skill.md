@@ -3,7 +3,7 @@ name: flue
 description: Letting agents control many desktop software, with one pip install, and no MCPs.
 ---
 
-Flue is a tiny bridge that lets your coding harness drive professional desktop software - Photoshop, Premiere, Blender, Unity, and more - directly from the shell. Flue is not an MCP server. The agent sends a script through a small bridge command, the bridge runs it inside the app, and the app returns JSON.
+Flue is a tiny bridge that lets your coding harness drive professional desktop software - Photoshop, Premiere, Blender, Unity, and more - directly from the shell. Flue is not an MCP server. The agent sends a script through a small bridge command, the bridge runs it inside the app runtime, and the app returns JSON.
 
 agent shell -> bridge command -> app scripting runtime -> JSON result
 
@@ -47,7 +47,7 @@ On Windows, py -m flue.cli ... is the reliable launcher; on macOS/Linux, use pyt
 If those are unavailable, use the Python executable that installed Flue: <python> -m flue.cli ....
 Use py -m flue.cli where on Windows, or python3 -m flue.cli where on macOS/Linux, for launcher and install diagnostics.
 If a Windows app is blocked by a modal, use py -m flue.cli modal <app> to inspect likely dialog windows and py -m flue.cli modal <app> --dismiss to attempt a bounded cancel-style dismissal outside the app scripting runtime.
-Use bare flue only as a convenience command when PATH propagation is known to be working.
+Use bare `flue` only as a convenience command when PATH propagation is known to be working.
 Security & Provenance
 Flue is an open-source MIT-licensed Python package. Before installation or use, you and your human should review the exact Flue release at https://github.com/SFKislev/flue and https://pypi.org/project/flue. Prefer a pinned version in an isolated environment.
 

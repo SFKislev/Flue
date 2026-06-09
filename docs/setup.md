@@ -1,6 +1,6 @@
 # Setup and Commands
 
-Flue connects agents to running desktop apps through local bridge commands.
+Flue connects agents to running desktop apps through small local bridge commands.
 The bridges connect to running apps by default and launch only when an adapter
 explicitly supports it and the user asks for it.
 
@@ -43,7 +43,7 @@ The `kilo` target installs a global skill at `~/.kilo/skills/flue/SKILL.md`.
 The `hermes` target installs a global skill at `~/.hermes/skills/flue/SKILL.md`
 when `~/.hermes/` already exists.
 
-Harness-by-harness discoverability details are documented in [Harness support and discoverability](harnesses.md).
+Harness-by-harness discoverability details live in [Harness support and discoverability](harnesses.md).
 
 ## Useful Commands
 

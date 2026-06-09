@@ -7,6 +7,7 @@ import urllib.request
 
 
 def default_session_file(session_name):
+    """Return the user-scoped session file used by local HTTP bridge panels."""
     return os.path.join(
         os.environ.get("APPDATA") or os.path.expanduser("~"),
         "creative-adapters",

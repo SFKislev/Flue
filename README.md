@@ -21,9 +21,9 @@ pip install flue
 flue setup
 ```
 
-**A tiny bridge that lets your coding agents drive desktop software - Photoshop, Premiere, Blender, Unity, and virtually any software - directly from the shell.**
+**A tiny bridge that lets your coding agents drive desktop software - Photoshop, Premiere, Blender, Unity, and more - directly from the shell.**
 
-Flue gives agentic harnesses - Codex, Claude Code, Gemini CLI, Antigravity CLI, OpenCode and the likes - direct access to the scripting APIs inside desktop software. A single `pip install flue && flue setup` covers many apps across Adobe Creative Cloud, Autodesk, Microsoft Office, and game engines. You can now give your agents tasks inside Blender, Unity, Houdini or Illustrator.
+Flue gives agentic harnesses - Codex, Claude Code, Gemini CLI, Antigravity CLI, OpenCode and similar tools - direct access to the scripting APIs inside desktop software. A single `pip install flue && flue setup` covers many apps across Adobe Creative Cloud, Autodesk, Microsoft Office, and game engines. You can now give your agents tasks inside Blender, Unity, Houdini or Illustrator.
 
 Flue is a generalized framework. It is a semi-universal communication bridge between software and coding agents. [It is simpler than MCP servers](https://github.com/SFKislev/flue/blob/main/docs/mcp.md). The agent sends a script through a small bridge command, the bridge runs it inside the app's own automation runtime, and the app returns JSON.
 

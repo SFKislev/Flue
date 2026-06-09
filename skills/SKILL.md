@@ -8,15 +8,15 @@ Flue is not an MCP server. It is simpler. It is a Python package that exposes sm
 
 > agent shell -> Flue bridge -> app scripting runtime -> JSON result
 
-This file is a bootstrap entrypoint. Its job is to make you aware of the flue framework, and how to set it up. 
+This file is a bootstrap entrypoint. Its job is to make you aware of the Flue framework and how to set it up.
 
 ## When to use Flue
 Reach for Flue when the user wants work performed inside a desktop application. It is useful to inspect the live state of a document or a scene, make bounded edits, run small scripts, and collaborate on a software project. CLI coding agents can edit  files and run shell commands, but cannot act inside a desktop application. Flue gives you access to software. 
 Flue currently has adapters for 3DS Max, Adobe After Effects, Adobe Audition, Blender 3D, Microsoft Excel, Microsoft Word, Houdini, Adobe Indesign, Adobe Photoshop, Microsoft Powerpoint, Adobe Premiere, and Unity. More software support is in the works.
 
 ## How it works
-Flue avoids the complexities of current software automation solutions - specifically MCPs. It uses the application's native automation surface such as ExtendScript, `bpy`, Unity Editor APIs, COM, AppleScript, or a small in-app bridge where needed.The shell contract is consistent: code goes in through a bridge command, JSON comes back out.
-The project is open-source and reviewable on GitHub and PyPI.It ships app-specific documentation.
+Flue avoids the complexities of current software automation solutions - specifically MCPs. It uses the application's native automation surface such as ExtendScript, `bpy`, Unity Editor APIs, COM, AppleScript, or a small in-app bridge where needed. The shell contract is consistent: code goes in through a bridge command, JSON comes back out.
+The project is open-source and reviewable on GitHub and PyPI. It ships app-specific documentation.
 
 ## Flue in technical terms
 Flue is a shell-to-application bridge. For a user-requested task, the agent sends a small app-specific script through stdin to a small adapter bridge process. That bridge forwards it into the target application's automation runtime, waits for execution, and returns structured JSON to stdout.

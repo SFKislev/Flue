@@ -7,7 +7,7 @@ This folder lets a coding agent drive a running Photoshop instance through shell
 | Platform | Mechanism |
 |----------|-----------|
 | Windows  | COM (`Photoshop.Application` ProgID) via `DoJavaScript` |
-| macOS    | AppleScript `do javascript` — no addon or panel required |
+| macOS    | AppleScript `do javascript` - no addon or panel required |
 
 On macOS the bridge auto-detects the running Photoshop process name via System
 Events, so no hardcoded version year is needed.
@@ -62,4 +62,4 @@ be scriptable on all Photoshop versions; report that limitation honestly.
 ## ExtendScript Notes
 
 Photoshop runs ExtendScript (ES3-era JavaScript). `JSON.stringify` is not
-available — use a manual serialisation helper for structured output.
+available - use a manual serialisation helper for structured output.

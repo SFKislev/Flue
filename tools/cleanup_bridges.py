@@ -16,6 +16,7 @@ def norm_path(value):
 
 
 def discover_bridge_paths():
+    """Discover bridge scripts that are safe for this cleanup tool to match."""
     paths = []
     for path in ROOT.glob("adapters/*_adapter/*_bridge.py"):
         paths.append(path)
