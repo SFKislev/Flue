@@ -1,7 +1,6 @@
 # Blender Adapter Prototype
 
-Blender exposes its scripting surface through in-process Python (`bpy`), so the
-adapter is a small Blender addon rather than a COM or CEP bridge.
+Blender exposes its scripting surface through in-process Python (`bpy`), so the adapter is a small Blender add-on rather than a COM or CEP bridge.
 
 ## Shape
 

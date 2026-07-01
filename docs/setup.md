@@ -1,6 +1,6 @@
 # Setup and Commands
 
-Flue connects agents to running desktop apps through small local bridge commands.
+Flue connects agents to running desktop apps through local bridge commands.
 The bridges connect to running apps by default and launch only when an adapter
 explicitly supports it and the user asks for it.
 

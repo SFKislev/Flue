@@ -1,6 +1,6 @@
 ---
 name: flue
-description: Let agents control software, including Adobe Photoshop, Illustrator, After Effects, Premiere, Autodesk 3DS Max, Blender, Unity, Houdini, and Microsoft Office. 
+description: Let agents control software, like Adobe Photoshop, Illustrator, After Effects, Premiere, Autodesk 3DS Max, Blender, Unity, Houdini, and Microsoft Office. 
 ---
 Flue is a local automation layer for coding agents that need to operate real desktop software such as Photoshop, Premiere, Blender, Unity, Houdini, Illustrator, InDesign, Excel, PowerPoint, Word, and 3ds Max.
 

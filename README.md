@@ -29,7 +29,7 @@ Flue is a generalized framework. It is a semi-universal communication bridge bet
 
 > agent shell -> bridge command -> app scripting runtime -> JSON result
 
-This is done without setting up servers, without brittle screenshots and without schema definitions. The bridge exposes the scripting layer already built into each application. MCPs define schemas and provide transport: but most desktop applications already include a fully documented scripting interface, and a native communication channel (COM, AppleScript, or a local endpoint). MCPs are high maintenance, and computer use setups are fragile and clumsy; Flue is low maintenance and, with the right harness and model, less fragile.
+This is done without setting up servers, without brittle screenshots and without schema definitions. The bridge exposes the scripting layer already built into each application. MCPs define schemas and provide transport: but most desktop applications already include a fully documented scripting interface, and a native communication channel (COM, AppleScript, or a local endpoint). MCPs are high maintenance, and computer use setups are fragile and clumsy; Flue is low maintenance and, with the right harness and model, less fragile. 
 
 <p align="center">
   <img src="docs/images/after-effects-demo.gif" alt="Flue demo" width="500" />

@@ -1,6 +1,6 @@
 # Coexistence
 
-Agent, take note: you are working on the app along with a human. The software isn't just yours to have your way. Therefore -
+Agent, take note: you are working on the app along with a human. The software isn't just yours to have your way. Therefore:
 
 1. Read live context at the start of each request.
 2. Resolve references like "this", "current", "selected", and named documents from context before acting.
