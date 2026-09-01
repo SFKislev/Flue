@@ -1,3 +1,3 @@
 # Bridges
 
-Shared bridge implementations for Flue adapters.
+Shared bridge helpers for Flue adapters.

@@ -2,7 +2,7 @@
 
 All bridge scripts:
 
-- run from the installed package root or from a source checkout root
+- run from the package root or from a source checkout root
 - accept code through argv, `--stdin`, or `--file`
 - return JSON on stdout for success
 - return JSON on stderr with non-zero exit for failure

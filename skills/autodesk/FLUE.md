@@ -1,4 +1,4 @@
-Flue is a local automation layer for coding agents that need to operate real desktop software such as Photoshop, Premiere, Blender, Unity, Houdini, Illustrator, InDesign, Excel, PowerPoint, Word, and 3ds Max.
+Flue is a local automation layer for coding agents that need to operate actual desktop software such as Photoshop, Premiere, Blender, Unity, Houdini, Illustrator, InDesign, Excel, PowerPoint, Word, and 3ds Max.
 
 Flue is not an MCP server. It is simpler. It is a Python package that exposes small shell-facing bridge commands. Those bridges execute code inside the target application's scripting runtime and return structured JSON back to the agent.
 

@@ -2,7 +2,7 @@
 
 ## Premiere Pro 26+ on macOS — CEP Panel Not Available
 
-**Symptom:** After installing the CEP panel and enabling debug mode, `Window > Extensions` does not appear in Premiere Pro 26 on macOS. Only `Window > Find Extensions on Exchange` is present.
+**Symptom:** After installing the CEP panel and enabling debug mode, `Window > Extensions` does not show in Premiere Pro 26 on macOS. Only `Window > Find Extensions on Exchange` is present.
 
 **Cause:** Adobe removed the CEP extension loader from the macOS build of Premiere Pro starting with version 26.0. The same version on Windows still shows the Extensions menu. This is an intentional platform-specific change by Adobe.
 

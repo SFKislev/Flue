@@ -1,6 +1,6 @@
 # Harness Support
 
-Running `flue setup` makes Flue discoverable by agentic frameworks.
+Running `flue setup` makes Flue discoverable by agent frameworks.
 Setup now installs a local Flue docs bundle into each harness location, then
 adds a small pointer so the harness can read those docs directly from its own
 skill or rules directory.

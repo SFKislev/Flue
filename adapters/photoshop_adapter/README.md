@@ -1,6 +1,6 @@
 # Photoshop Adapter Prototype
 
-This folder lets a coding agent drive a running Photoshop instance through shell commands.
+This folder lets a coding agent drive a running Photoshop instance via shell commands.
 
 ## Platform Bridge
 

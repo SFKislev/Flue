@@ -1,3 +1,3 @@
 # Tools
 
-Maintenance utilities for Flue.
+Maintenance scripts for Flue.
