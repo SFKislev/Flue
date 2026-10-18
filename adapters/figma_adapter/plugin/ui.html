@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 12px/1.45 Inter, system-ui, sans-serif; overflow: hidden;
+         background: var(--figma-color-bg, #fff); color: var(--figma-color-text, #222); }
+  #bar { display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px; cursor: pointer; user-select: none; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #999; flex: none; }
+  .dot.ok { background: #1bc47d; } .dot.busy { background: #f5a623; animation: pulse .9s ease-in-out infinite; }
+  .dot.err { background: #f24822; } .dot.wait { background: #f5a623; }
+  @keyframes pulse { 50% { transform: scale(1.45); opacity: .6; } }
+  #status { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; }
+  #chev { color: var(--figma-color-text-secondary, #888); font-size: 10px; }
+  #panel { display: none; padding: 2px 12px 12px; }
+  body.open #panel { display: block; }
+  .muted { color: var(--figma-color-text-secondary, #777); }
+  .row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+  input[type=text] { width: 110px; padding: 5px 7px; font: inherit; letter-spacing: 2px;
+         background: var(--figma-color-bg-secondary, #f5f5f5); color: inherit;
+         border: 1px solid var(--figma-color-border, #ddd); border-radius: 5px; }
+  button { padding: 5px 10px; font: inherit; border-radius: 5px; cursor: pointer;
+         border: 1px solid var(--figma-color-border, #ccc); background: var(--figma-color-bg-brand, #0d99ff); color: #fff; }
+  #pairbox { display: none; margin-top: 4px; }
+  label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  #warn { margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div id="bar" title="Click for details. Closing this window disconnects the agent.">
+    <span id="dot" class="dot"></span><span id="status">Starting…</span><span id="chev">▾</span>
+  </div>
+  <div id="panel">
+    <div id="detail" class="muted"></div>
+    <div id="sel" class="muted"></div>
+    <div id="last" class="muted" style="min-height:16px"></div>
+    <div class="row" style="margin-top:4px"><label><input id="ro" type="checkbox"> Read-only (block set / build / image / eval)</label></div>
+    <div id="pairbox">
+      <div class="muted" style="margin-bottom:4px">Waiting for your agent to approve. Or type a code from <code>figma_bridge.py pair --code</code>:</div>
+      <div class="row"><input id="code" type="text" maxlength="7" placeholder="123-456" autocomplete="off"><button id="go">Pair</button></div>
+    </div>
+    <div id="caps" class="muted"></div>
+    <div id="warn" class="muted"><b>Keep this window open.</b> Closing it disconnects the agent.</div>
+  </div>
+
+<script>
+// Keep PORT in sync with manifest.json (`figma_bridge.py manifest --port N` rewrites both).
+const PORT = 47821;
+const BASES = [`http://localhost:${PORT}`];
+const VERBS = ['combobulating', 'noodling', 'pixel-wrangling', 'kerning', 'nudging', 'auto-laying', 'bezier-ing', 'squishing',
+  'herding frames', 'whisking gradients', 'snapping to grid', 'untangling layers', 'polishing corners', 'aligning vibes'];
+const W_SMALL = [190, 38], W_OPEN = [300, 232];
+
+const $ = (id) => document.getElementById(id);
+const rnd = new Uint8Array(8); crypto.getRandomValues(rnd);
+const cid = 'c' + Array.from(rnd, (b) => b.toString(16).padStart(2, '0')).join('');
+let token = '', file = '', editor = '', base = null;
+let selInfo = { sel: [], n: 0, page: '' }, ro = false;
+const pending = new Map();
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const toMain = (m) => parent.postMessage({ pluginMessage: m }, '*');
+
+// ---- status line (compact) -------------------------------------------------
+let wasConnected = false, announced = false;
+function status(text, kind, detail) {
+  $('status').textContent = text;
+  $('dot').className = 'dot ' + (kind || '');
+  $('detail').textContent = detail || '';
+  $('pairbox').style.display = !token ? 'block' : 'none';
+}
+// Toast once per outage: figma.notify runs in the main thread, so ask it via postMessage.
+function dropped(text) {
+  if (!wasConnected) return;
+  wasConnected = false;
+  toMain({ type: 'notify', text, error: true });
+}
+function connected() {
+  wasConnected = true;
+  if (!announced) { announced = true; toMain({ type: 'notify', text: 'Flue connected: the agent can work in this file.' }); }
+  status('Connected', 'ok', file);
+}
+// Window size: tiny bar by default, details on click.
+function setOpen(open) {
+  document.body.classList.toggle('open', open);
+  $('chev').textContent = open ? '▴' : '▾';
+  const [w, h] = open ? W_OPEN : W_SMALL;
+  toMain({ type: 'resize', w, h });
+}
+$('bar').onclick = () => setOpen(!document.body.classList.contains('open'));
+
+// ---- messages from the plugin main thread ---------------------------------
+window.onmessage = (e) => {
+  const m = e.data && e.data.pluginMessage;
+  if (!m) return;
+  if (m.type === 'init') {
+    token = m.token || ''; file = m.file; editor = m.editor; ro = !!m.ro;
+    $('ro').checked = ro;
+    $('caps').textContent = `v${m.v} · run code strings: ${m.eval ? 'yes' : 'NO (fixed ops only)'}`;
+    status(token ? 'Connecting…' : 'Waiting for agent…', token ? '' : 'wait');
+    loop();
+  } else if (m.type === 'result') {
+    const done = pending.get(m.jid);
+    if (done) { pending.delete(m.jid); done(m.res); }
+  } else if (m.type === 'sel') {
+    selInfo = { sel: m.sel, n: m.n, page: m.page };
+    $('sel').textContent = m.n ? `Selected: ${m.sel.map((s) => s[1]).join(', ')}${m.n > m.sel.length ? ` +${m.n - m.sel.length}` : ''}` : 'Nothing selected';
+  }
+};
+$('ro').onchange = () => { ro = $('ro').checked; toMain({ type: 'ro', value: ro }); };
+
+// ---- pairing ----------------------------------------------------------------
+async function findBase() {
+  for (const b of BASES) {
+    try { const r = await fetch(b + '/health'); if (r.ok) return b; } catch (_) {}
+  }
+  return null;
+}
+function paired(t) { token = t; toMain({ type: 'save', token }); }
+
+$('go').onclick = async () => {
+  const code = $('code').value.trim();
+  if (!code) return;
+  try {
+    base = base || await findBase();
+    if (!base) return status('Bridge not running', 'err', 'Run any figma_bridge.py command to start it.');
+    const r = await fetch(base + '/pair', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code, client: cid, file }) });
+    const j = await r.json();
+    if (!r.ok || !j.token) return status('Pairing failed', 'err', j.error || ('HTTP ' + r.status));
+    paired(j.token);
+  } catch (err) { status('Pairing failed', 'err', String(err)); }
+};
+
+// No token yet: file a request, then wait until the agent approves it from the shell.
+let lastRequest = 0;
+async function waitForApproval() {
+  if (!base) {
+    base = await findBase();
+    if (!base) { status('Waiting for agent…', 'wait', 'The bridge starts when the agent first connects.'); await sleep(1500); return; }
+  }
+  try {
+    if (Date.now() - lastRequest > 60000) {
+      await fetch(base + '/pair-request', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ client: cid, file, editor }) });
+      lastRequest = Date.now();
+    }
+    const r = await fetch(`${base}/pair-status?client=${encodeURIComponent(cid)}`);
+    const j = await r.json();
+    if (j.state === 'approved' && j.token) { paired(j.token); return; }
+    if (j.state === 'none') lastRequest = 0; // expired: ask again
+    status('Waiting for agent…', 'wait', 'Tell your agent to connect to Figma.');
+  } catch (_) { base = null; }
+  await sleep(800);
+}
+
+// ---- contact sheet: stitch exported PNGs into one labelled image ------------
+const loadImg = (b64) => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('image decode failed')); im.src = 'data:image/png;base64,' + b64; });
+async function compose(res) {
+  const { parts, cols: c0, maxpx, labels } = res.sheet;
+  const imgs = await Promise.all(parts.map((p) => loadImg(p.b64)));
+  const n = imgs.length;
+  const cols = Math.max(1, Math.min(n, c0 || (n <= 4 ? n : n <= 6 ? 3 : n <= 12 ? 4 : 6)));
+  const rows = Math.ceil(n / cols);
+  const pad = 16, gap = 16, lab = labels ? 24 : 0;
+  const cellW = Math.max(...imgs.map((i) => i.width));
+  const rowH = [];
+  for (let r = 0; r < rows; r++) rowH.push(Math.max(...imgs.slice(r * cols, r * cols + cols).map((i) => i.height)) + lab);
+  const W = pad * 2 + cols * cellW + (cols - 1) * gap;
+  const H = pad * 2 + rowH.reduce((a, b) => a + b, 0) + (rows - 1) * gap;
+  const k = Math.min(1, (maxpx || 1600) / W);
+  const cv = document.createElement('canvas');
+  cv.width = Math.max(1, Math.round(W * k)); cv.height = Math.max(1, Math.round(H * k));
+  const g = cv.getContext('2d');
+  g.scale(k, k);
+  g.fillStyle = '#383838'; g.fillRect(0, 0, W, H);
+  g.font = '600 13px Inter, system-ui, sans-serif'; g.textBaseline = 'middle';
+  let y = pad;
+  const order = [];
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols && r * cols + c < n; c++) {
+      const i = r * cols + c, im = imgs[i], x = pad + c * (cellW + gap);
+      g.drawImage(im, x, y);
+      if (labels) {
+        const t = `${i + 1}  ${parts[i].name}`;
+        g.fillStyle = '#ffffff'; g.fillText(t.length > 38 ? t.slice(0, 37) + '…' : t, x, y + im.height + 13);
+      }
+      order.push([i + 1, parts[i].id, parts[i].name]);
+    }
+    y += rowH[r] + gap;
+  }
+  const b64 = cv.toDataURL('image/png').split(',')[1];
+  return { ok: true, n, cols, w: cv.width, h: cv.height, order, ...(res.skipped ? { skipped: res.skipped } : {}), bin: { mime: 'image/png', b64 } };
+}
+
+// ---- job loop -----------------------------------------------------------------
+// jid = transport job id; job = {op, ...args} (its "id", if any, is a Figma node id)
+function runInMain(jid, job) {
+  return new Promise((resolve) => { pending.set(jid, resolve); toMain({ type: 'job', jid, job }); });
+}
+async function runJob(jid, job) {
+  let res = await runInMain(jid, job);
+  if (res && res.ok && res.sheet) {
+    try { res = await compose(res); } catch (err) { res = { ok: false, code: 'SHEET_FAILED', error: String((err && err.message) || err) }; }
+  }
+  return res;
+}
+
+let looping = false;
+async function loop() {
+  if (looping) return; looping = true;
+  while (true) {
+    if (!token) { await waitForApproval(); continue; }
+    if (!base) {
+      base = await findBase();
+      if (!base) { dropped('Flue: connection lost, the bridge is not running.'); status('Bridge not running', 'err', 'Run any figma_bridge.py command to start it.'); await sleep(2000); continue; }
+    }
+    try {
+      const info = encodeURIComponent(JSON.stringify({ sel: selInfo.sel, n: selInfo.n, page: selInfo.page, ro }));
+      const q = `client=${encodeURIComponent(cid)}&file=${encodeURIComponent(file)}&editor=${encodeURIComponent(editor)}&info=${info}`;
+      const r = await fetch(`${base}/poll?${q}`, { headers: { 'X-Bridge-Token': token } });
+      if (r.status === 401 || r.status === 403) { dropped('Flue: pairing was rejected. Open the plugin again to re-pair.'); token = ''; toMain({ type: 'save', token: '' }); lastRequest = 0; continue; }
+      if (r.status === 204) { connected(); continue; }
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      const { jid, job } = await r.json();
+      let verb = VERBS[Math.floor(Math.random() * VERBS.length)];
+      status(verb + '…', 'busy', file);
+      const ticker = setInterval(() => { verb = VERBS[Math.floor(Math.random() * VERBS.length)]; status(verb + '…', 'busy', file); }, 2600);
+      const t0 = Date.now();
+      let res;
+      try { res = await runJob(jid, job); } finally { clearInterval(ticker); }
+      $('last').textContent = `${job.op} ${res.ok ? 'ok' : 'failed'} · ${Date.now() - t0} ms`;
+      await fetch(base + '/result', { method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Bridge-Token': token },
+        body: JSON.stringify({ client: cid, jid, res }) });
+      connected();
+    } catch (err) {
+      base = null; dropped('Flue: connection lost, reconnecting…'); status('Reconnecting…', 'err', String(err && err.message || err)); await sleep(1500);
+    }
+  }
+}
+</script>
+</body>
+</html>

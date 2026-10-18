@@ -64,6 +64,7 @@ A single Flue installation supports, out of the box, many applications. Agents, 
 - [Microsoft Word](adapters/word_adapter/APP.md)
 - [Microsoft Excel](adapters/excel_adapter/APP.md)
 - [Microsoft PowerPoint](adapters/powerpoint_adapter/APP.md)
+- [Figma](adapters/figma_adapter/APP.md) (desktop app + one-time plugin import)
 
 ## Agentic Systems
 
