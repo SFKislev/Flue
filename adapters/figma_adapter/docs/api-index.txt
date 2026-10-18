@@ -1,0 +1,1721 @@
+# Figma Plugin API Index (grep-friendly)
+# Source: @figma/plugin-typings plugin-api.d.ts (MIT). See sources.md.
+# Format: KIND<TAB>symbol. Search with rg before writing a script; do not read this file whole.
+# Properties live on mixins: use USEDBY lines to see which node types have them.
+
+# CLASS
+CLASS	VersionHistoryResult
+CLASS	VariablesAPI
+CLASS	LibraryVariableCollection
+CLASS	LibraryVariable
+CLASS	AnnotationsAPI
+CLASS	BuzzAPI
+CLASS	BuzzTextField
+CLASS	BuzzMediaField
+CLASS	TeamLibraryAPI
+CLASS	PaymentsAPI
+CLASS	ClientStorageAPI
+CLASS	NotificationOptions
+CLASS	NotificationHandler
+CLASS	MotionAPI
+CLASS	ShowUIOptions
+CLASS	UIPostMessageOptions
+CLASS	OnMessageProperties
+CLASS	UIAPI
+CLASS	UtilAPI
+CLASS	ColorPalette
+CLASS	ColorPalettes
+CLASS	ConstantsAPI
+CLASS	CodegenAPI
+CLASS	DevResource
+CLASS	DevResourceWithNodeId	extends DevResource
+CLASS	VSCodeAPI
+CLASS	DevResourcesAPI
+CLASS	TimerAPI
+CLASS	ViewportAPI
+CLASS	TextReviewAPI
+CLASS	ParameterValues
+CLASS	SuggestionResults
+CLASS	ParametersAPI
+CLASS	RunParametersEvent
+CLASS	OpenDevResourcesEvent
+CLASS	SlidesViewChangeEvent
+CLASS	CanvasViewChangeEvent
+CLASS	DropEvent
+CLASS	DropItem
+CLASS	DropFile
+CLASS	DocumentChangeEvent
+CLASS	StyleChangeEvent
+CLASS	BaseDocumentChange
+CLASS	BaseNodeChange	extends BaseDocumentChange
+CLASS	RemovedNode
+CLASS	CreateChange	extends BaseNodeChange
+CLASS	DeleteChange	extends BaseNodeChange
+CLASS	PropertyChange	extends BaseNodeChange
+CLASS	BaseStyleChange	extends BaseDocumentChange
+CLASS	StyleCreateChange	extends BaseStyleChange
+CLASS	StyleDeleteChange	extends BaseStyleChange
+CLASS	StylePropertyChange	extends BaseStyleChange
+CLASS	NodeChangeEvent
+CLASS	Vector
+CLASS	Rect
+CLASS	RGB
+CLASS	RGBA
+CLASS	RGBWithColorSpace	extends RGB
+CLASS	RGBAWithColorSpace	extends RGBA
+CLASS	FontName
+CLASS	FontVariationSettings
+CLASS	FontNameInput
+CLASS	ArcData
+CLASS	DropShadowEffect
+CLASS	InnerShadowEffect
+CLASS	BlurEffectBase
+CLASS	BlurEffectNormal	extends BlurEffectBase
+CLASS	BlurEffectProgressive	extends BlurEffectBase
+CLASS	NoiseEffectBase
+CLASS	NoiseEffectMonotone	extends NoiseEffectBase
+CLASS	NoiseEffectDuotone	extends NoiseEffectBase
+CLASS	NoiseEffectMultitone	extends NoiseEffectBase
+CLASS	TextureEffect
+CLASS	GlassEffect
+CLASS	ShaderEffect
+CLASS	Constraints
+CLASS	ColorStop
+CLASS	ImageFilters
+CLASS	SolidPaint
+CLASS	GradientPaint
+CLASS	ImagePaint
+CLASS	VideoPaint
+CLASS	PatternPaint
+CLASS	ShaderPaint
+CLASS	ShaderPropertyDefinition
+CLASS	Shader
+CLASS	Guide
+CLASS	RowsColsLayoutGrid
+CLASS	GridLayoutGrid
+CLASS	ExportSettingsConstraints
+CLASS	ExportSettingsImage
+CLASS	ExportSettingsSVGBase
+CLASS	ExportSettingsSVG	extends ExportSettingsSVGBase
+CLASS	ExportSettingsSVGString	extends ExportSettingsSVGBase
+CLASS	ExportSettingsPDF
+CLASS	ExportSettingsREST
+CLASS	ExportSettingsMP4
+CLASS	ExportSettingsGIF
+CLASS	ExportSettingsWEBM
+CLASS	VectorVertex
+CLASS	VectorSegment
+CLASS	VectorRegion
+CLASS	VectorNetwork
+CLASS	VectorPath
+CLASS	LetterSpacing
+CLASS	Font
+CLASS	StyledTextSegment
+CLASS	TextPathStartData
+CLASS	Expression
+CLASS	VariableData
+CLASS	SimpleTransition
+CLASS	DirectionalTransition
+CLASS	Easing
+CLASS	EasingFunctionBezier
+CLASS	EasingFunctionSpring
+CLASS	MotionEasing
+CLASS	PhysicalSpring
+CLASS	NormalizedSpring
+CLASS	BaseAnimationStyle
+CLASS	AvailableAnimationStyle	extends BaseAnimationStyle
+CLASS	FigmaAnimationStyleConfiguration
+CLASS	CustomAnimationStyleConfiguration
+CLASS	AppliedFigmaAnimationStyle	extends BaseAnimationStyle, FigmaAnimationStyleConfiguration
+CLASS	AppliedCustomAnimationStyle	extends BaseAnimationStyle, CustomAnimationStyleConfiguration
+CLASS	ManualKeyframeInput
+CLASS	ManualKeyframeTrackInput
+CLASS	ManualKeyframe	extends ManualKeyframeInput
+CLASS	ManualKeyframeBinding
+CLASS	ManualKeyframeTrack
+CLASS	KeyframeBinding
+CLASS	Timeline
+CLASS	ConnectorEndpointPosition
+CLASS	ConnectorEndpointPositionAndEndpointNodeId
+CLASS	ConnectorEndpointEndpointNodeIdAndMagnet
+CLASS	BaseNodeMixin	extends PluginDataMixin, DevResourcesMixin
+CLASS	PluginDataMixin
+CLASS	DevResourcesMixin
+CLASS	DevStatusMixin
+CLASS	SceneNodeMixin	extends ExplicitVariableModesMixin, MotionNodeMixin
+CLASS	MotionNodeMixin
+CLASS	StickableMixin
+CLASS	ChildrenMixin
+CLASS	ConstraintMixin
+CLASS	DimensionAndPositionMixin
+CLASS	LayoutMixin	extends DimensionAndPositionMixin, AutoLayoutChildrenMixin, GridChildrenMixin
+CLASS	AspectRatioLockMixin
+CLASS	BlendMixin	extends MinimalBlendMixin
+CLASS	ContainerMixin
+CLASS	DeprecatedBackgroundMixin
+CLASS	AutoLayoutMixin
+CLASS	GridTrackSize
+CLASS	GridTrackReorderOptions
+CLASS	GridTrackReorderEntry
+CLASS	GridLayoutMixin
+CLASS	AutoLayoutChildrenMixin
+CLASS	GridChildrenMixin
+CLASS	InferredAutoLayoutResult	extends AutoLayoutChildrenMixin, AutoLayoutMixin
+CLASS	MinimalStrokesMixin
+CLASS	IndividualStrokesMixin
+CLASS	MinimalFillsMixin
+CLASS	VariableWidthPoint
+CLASS	PresetVariableWidthStrokeProperties
+CLASS	CustomVariableWidthStrokeProperties
+CLASS	ScatterBrushProperties
+CLASS	StretchBrushProperties
+CLASS	DynamicStrokeProperties
+CLASS	GeometryMixin	extends MinimalStrokesMixin, MinimalFillsMixin
+CLASS	ComplexStrokesMixin
+CLASS	CornerMixin
+CLASS	RectangleCornerMixin
+CLASS	ExportMixin
+CLASS	FramePrototypingMixin
+CLASS	VectorLikeMixin
+CLASS	ReactionMixin
+CLASS	DocumentationLink
+CLASS	PublishableMixin
+CLASS	DefaultShapeMixin	extends BaseNodeMixin, SceneNodeMixin, ReactionMixin, BlendMixin, GeometryMixin, LayoutMixin, ExportMixin
+CLASS	BaseFrameMixin	extends BaseNodeMixin, SceneNodeMixin, ChildrenMixin, ContainerMixin, DeprecatedBackgroundMixin, GeometryMixin, ComplexStrokesMixin, CornerMixin, RectangleCornerMixin, BlendMixin, ConstraintMixin, LayoutMixin, ExportMixin, IndividualStrokesMixin, AutoLayoutMixin, GridLayoutMixin, AspectRatioLockMixin, AnnotationsMixin, DevStatusMixin
+CLASS	DefaultFrameMixin	extends BaseFrameMixin, FramePrototypingMixin, ReactionMixin
+CLASS	OpaqueNodeMixin	extends BaseNodeMixin, SceneNodeMixin, ExportMixin, DimensionAndPositionMixin
+CLASS	MinimalBlendMixin
+CLASS	Annotation
+CLASS	AnnotationProperty
+CLASS	AnnotationsMixin
+CLASS	Measurement
+CLASS	MeasurementsMixin
+CLASS	VariantMixin
+CLASS	ComponentPropertiesMixin
+CLASS	BaseNonResizableTextMixin
+CLASS	NonResizableTextMixin	extends BaseNonResizableTextMixin
+CLASS	NonResizableTextPathMixin	extends BaseNonResizableTextMixin
+CLASS	TextSublayerNode	extends NonResizableTextMixin, MinimalFillsMixin
+CLASS	DocumentNode	extends BaseNodeMixin
+CLASS	ExplicitVariableModesMixin
+CLASS	PageNode	extends BaseNodeMixin, ChildrenMixin, ExportMixin, ExplicitVariableModesMixin, MeasurementsMixin
+CLASS	FrameNode	extends DefaultFrameMixin
+CLASS	GroupNode	extends BaseNodeMixin, SceneNodeMixin, ReactionMixin, ChildrenMixin, ContainerMixin, DeprecatedBackgroundMixin, BlendMixin, LayoutMixin, ExportMixin, AspectRatioLockMixin
+CLASS	TransformGroupNode	extends BaseNodeMixin, SceneNodeMixin, ReactionMixin, ChildrenMixin, ContainerMixin, DeprecatedBackgroundMixin, BlendMixin, LayoutMixin, ExportMixin, AspectRatioLockMixin
+CLASS	SliceNode	extends BaseNodeMixin, SceneNodeMixin, LayoutMixin, ExportMixin
+CLASS	RectangleNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, ComplexStrokesMixin, RectangleCornerMixin, IndividualStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	LineNode	extends DefaultShapeMixin, ConstraintMixin, AnnotationsMixin, ComplexStrokesMixin
+CLASS	EllipseNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, ComplexStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	PolygonNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, ComplexStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	StarNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, ComplexStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	VectorNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, ComplexStrokesMixin, VectorLikeMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	TextNode	extends DefaultShapeMixin, ConstraintMixin, NonResizableTextMixin, ComplexStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	TextPathNode	extends DefaultShapeMixin, ConstraintMixin, NonResizableTextPathMixin, ComplexStrokesMixin, AnnotationsMixin, AspectRatioLockMixin
+CLASS	ComponentSetNode	extends BaseFrameMixin, PublishableMixin, ComponentPropertiesMixin
+CLASS	ComponentNode	extends DefaultFrameMixin, PublishableMixin, VariantMixin, ComponentPropertiesMixin
+CLASS	InstanceNode	extends DefaultFrameMixin, VariantMixin
+CLASS	SlotNode	extends DefaultFrameMixin
+CLASS	BooleanOperationNode	extends DefaultShapeMixin, ChildrenMixin, CornerMixin, ComplexStrokesMixin, ContainerMixin, AspectRatioLockMixin
+CLASS	StickyNode	extends OpaqueNodeMixin, MinimalFillsMixin, MinimalBlendMixin
+CLASS	StampNode	extends DefaultShapeMixin, ConstraintMixin, StickableMixin, AspectRatioLockMixin
+CLASS	TableNode	extends OpaqueNodeMixin, MinimalFillsMixin, MinimalBlendMixin
+CLASS	TableCellNode	extends MinimalFillsMixin
+CLASS	HighlightNode	extends DefaultShapeMixin, ConstraintMixin, CornerMixin, VectorLikeMixin, StickableMixin, AspectRatioLockMixin
+CLASS	WashiTapeNode	extends DefaultShapeMixin, StickableMixin, AspectRatioLockMixin
+CLASS	ShapeWithTextNode	extends OpaqueNodeMixin, MinimalFillsMixin, MinimalBlendMixin, MinimalStrokesMixin
+CLASS	CodeBlockNode	extends OpaqueNodeMixin, MinimalBlendMixin
+CLASS	LabelSublayerNode
+CLASS	ConnectorNode	extends OpaqueNodeMixin, MinimalBlendMixin, MinimalStrokesMixin
+CLASS	VariableAlias
+CLASS	Variable	extends PluginDataMixin
+CLASS	VariableCollection	extends PluginDataMixin
+CLASS	ExtendedVariableCollection	extends Omit, 'addMode'>
+CLASS	AnnotationCategory
+CLASS	WidgetNode	extends OpaqueNodeMixin, StickableMixin
+CLASS	EmbedData
+CLASS	EmbedNode	extends OpaqueNodeMixin
+CLASS	LinkUnfurlData
+CLASS	LinkUnfurlNode	extends OpaqueNodeMixin
+CLASS	MediaData
+CLASS	MediaNode	extends OpaqueNodeMixin
+CLASS	SectionNode	extends ChildrenMixin, MinimalFillsMixin, OpaqueNodeMixin, DevStatusMixin, AspectRatioLockMixin, MinimalStrokesMixin, CornerMixin, RectangleCornerMixin
+CLASS	SlideNode	extends BaseFrameMixin
+CLASS	SlideRowNode	extends OpaqueNodeMixin, ChildrenMixin
+CLASS	SlideGridNode	extends OpaqueNodeMixin, ChildrenMixin
+CLASS	InteractiveSlideElementNode	extends OpaqueNodeMixin
+CLASS	SlideTransition
+CLASS	StyleConsumers
+CLASS	BaseStyleMixin	extends PublishableMixin, PluginDataMixin
+CLASS	PaintStyle	extends BaseStyleMixin
+CLASS	TextStyle	extends BaseStyleMixin
+CLASS	EffectStyle	extends BaseStyleMixin
+CLASS	GridStyle	extends BaseStyleMixin
+CLASS	CustomAnimationStyle	extends BaseStyleMixin
+CLASS	Image
+CLASS	Video
+CLASS	BaseUser
+CLASS	User	extends BaseUser
+CLASS	ActiveUser	extends User
+CLASS	FindAllCriteria
+CLASS	RepeatModifier
+CLASS	LinearRepeatModifier	extends RepeatModifier
+CLASS	RadialRepeatModifier	extends RepeatModifier
+
+# USEDBY (mixin -> node types)
+USEDBY	MinimalFillsMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SlideNode,SlotNode,StampNode,StarNode,StickyNode,TableCellNode,TableNode,TextNode,TextPathNode,TextSublayerNode,VectorNode,WashiTapeNode
+USEDBY	NonResizableTextMixin	TextNode,TextSublayerNode
+USEDBY	BaseNonResizableTextMixin	TextNode,TextPathNode,TextSublayerNode
+USEDBY	DevResourcesMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,DocumentNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PageNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	PluginDataMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,DocumentNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PageNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	BaseNodeMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,DocumentNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PageNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	ChildrenMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,FrameNode,GroupNode,InstanceNode,PageNode,SectionNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,TransformGroupNode
+USEDBY	ExplicitVariableModesMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PageNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	MeasurementsMixin	PageNode
+USEDBY	ExportMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PageNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	ConstraintMixin	ComponentNode,ComponentSetNode,EllipseNode,FrameNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,VectorNode
+USEDBY	DeprecatedBackgroundMixin	ComponentNode,ComponentSetNode,FrameNode,GroupNode,InstanceNode,SlideNode,SlotNode,TransformGroupNode
+USEDBY	AutoLayoutChildrenMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SliceNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	ContainerMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,FrameNode,GroupNode,InstanceNode,SlideNode,SlotNode,TransformGroupNode
+USEDBY	AnnotationsMixin	ComponentNode,ComponentSetNode,EllipseNode,FrameNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlideNode,SlotNode,StarNode,TextNode,TextPathNode,VectorNode
+USEDBY	ComplexStrokesMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlideNode,SlotNode,StarNode,TextNode,TextPathNode,VectorNode
+USEDBY	GridLayoutMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,SlideNode,SlotNode
+USEDBY	ReactionMixin	BooleanOperationNode,ComponentNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	AspectRatioLockMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,PolygonNode,RectangleNode,SectionNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	AutoLayoutMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,SlideNode,SlotNode
+USEDBY	CornerMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,HighlightNode,InstanceNode,PolygonNode,RectangleNode,SectionNode,SlideNode,SlotNode,StarNode,VectorNode
+USEDBY	IndividualStrokesMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,RectangleNode,SlideNode,SlotNode
+USEDBY	BaseFrameMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,SlideNode,SlotNode
+USEDBY	GeometryMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,VectorNode,WashiTapeNode
+USEDBY	DevStatusMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,SectionNode,SlideNode,SlotNode
+USEDBY	FramePrototypingMixin	ComponentNode,FrameNode,InstanceNode,SlotNode
+USEDBY	MinimalStrokesMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,FrameNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,VectorNode,WashiTapeNode
+USEDBY	SceneNodeMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	GridChildrenMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SliceNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	DimensionAndPositionMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	MinimalBlendMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,ShapeWithTextNode,SlideNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	MotionNodeMixin	BooleanOperationNode,CodeBlockNode,ComponentNode,ComponentSetNode,ConnectorNode,EllipseNode,EmbedNode,FrameNode,GroupNode,HighlightNode,InstanceNode,InteractiveSlideElementNode,LineNode,LinkUnfurlNode,MediaNode,PolygonNode,RectangleNode,SectionNode,ShapeWithTextNode,SliceNode,SlideGridNode,SlideNode,SlideRowNode,SlotNode,StampNode,StarNode,StickyNode,TableNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode,WidgetNode
+USEDBY	RectangleCornerMixin	ComponentNode,ComponentSetNode,FrameNode,InstanceNode,RectangleNode,SectionNode,SlideNode,SlotNode
+USEDBY	LayoutMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SliceNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	BlendMixin	BooleanOperationNode,ComponentNode,ComponentSetNode,EllipseNode,FrameNode,GroupNode,HighlightNode,InstanceNode,LineNode,PolygonNode,RectangleNode,SlideNode,SlotNode,StampNode,StarNode,TextNode,TextPathNode,TransformGroupNode,VectorNode,WashiTapeNode
+USEDBY	DefaultFrameMixin	ComponentNode,FrameNode,InstanceNode,SlotNode
+USEDBY	DefaultShapeMixin	BooleanOperationNode,EllipseNode,HighlightNode,LineNode,PolygonNode,RectangleNode,StampNode,StarNode,TextNode,TextPathNode,VectorNode,WashiTapeNode
+USEDBY	VectorLikeMixin	HighlightNode,VectorNode
+USEDBY	NonResizableTextPathMixin	TextPathNode
+USEDBY	ComponentPropertiesMixin	ComponentNode,ComponentSetNode
+USEDBY	PublishableMixin	ComponentNode,ComponentSetNode
+USEDBY	VariantMixin	ComponentNode,InstanceNode
+USEDBY	OpaqueNodeMixin	CodeBlockNode,ConnectorNode,EmbedNode,InteractiveSlideElementNode,LinkUnfurlNode,MediaNode,SectionNode,ShapeWithTextNode,SlideGridNode,SlideRowNode,StickyNode,TableNode,WidgetNode
+USEDBY	StickableMixin	HighlightNode,StampNode,WashiTapeNode,WidgetNode
+
+# MEMBERS
+PROPERTY	figma.readonly apiVersion: '1.0.0'
+PROPERTY	figma.readonly command: string
+PROPERTY	figma.readonly editorType: 'figma' | 'figjam' | 'dev' | 'slides' | 'buzz'
+PROPERTY	figma.readonly mode: 'default' | 'textreview' | 'inspect' | 'codegen' | 'linkpreview' | 'auth'
+PROPERTY	figma.readonly pluginId?: string
+PROPERTY	figma.readonly widgetId?: string
+PROPERTY	figma.readonly fileKey: string | undefined
+PROPERTY	figma.skipInvisibleInstanceChildren: boolean
+PROPERTY	figma.readonly timer?: TimerAPI
+PROPERTY	figma.readonly viewport: ViewportAPI
+PROPERTY	figma.readonly currentUser: User | null
+PROPERTY	figma.readonly activeUsers: ActiveUser[]
+PROPERTY	figma.readonly textreview?: TextReviewAPI
+PROPERTY	figma.readonly codegen: CodegenAPI
+PROPERTY	figma.readonly vscode?: VSCodeAPI
+PROPERTY	figma.readonly devResources?: DevResourcesAPI
+PROPERTY	figma.readonly payments?: PaymentsAPI
+METHOD	figma.closePlugin(message?: string): void
+METHOD	figma.notify(message: string, options?: NotificationOptions): NotificationHandler
+METHOD	figma.commitUndo(): void
+METHOD	figma.triggerUndo(): void
+METHOD	figma.saveVersionHistoryAsync(title: string, description?: string): Promise<VersionHistoryResult>
+METHOD	figma.openExternal(url: string): void
+METHOD	figma.showUI(html: string, options?: ShowUIOptions): void
+PROPERTY	figma.readonly ui: UIAPI
+PROPERTY	figma.readonly util: UtilAPI
+PROPERTY	figma.readonly constants: ConstantsAPI
+PROPERTY	figma.readonly clientStorage: ClientStorageAPI
+PROPERTY	figma.readonly parameters: ParametersAPI
+PROPERTY	figma.readonly motion: MotionAPI
+METHOD	figma.getNodeByIdAsync(id: string): Promise<BaseNode | null>
+METHOD	figma.getNodeById(id: string): BaseNode | null
+METHOD	figma.getStyleByIdAsync(id: string): Promise<BaseStyle | null>
+METHOD	figma.getStyleById(id: string): BaseStyle | null
+PROPERTY	figma.readonly variables: VariablesAPI
+PROPERTY	figma.readonly teamLibrary: TeamLibraryAPI
+PROPERTY	figma.readonly annotations: AnnotationsAPI
+PROPERTY	figma.readonly buzz: BuzzAPI
+PROPERTY	figma.readonly root: DocumentNode
+PROPERTY	figma.currentPage: PageNode
+METHOD	figma.setCurrentPageAsync(page: PageNode): Promise<void>
+METHOD	figma.on(type: ArgFreeEventType, callback: () => void): void
+METHOD	figma.on(type: 'run', callback: (event: RunEvent) => void): void
+METHOD	figma.on(type: 'drop', callback: (event: DropEvent) => boolean): void
+METHOD	figma.on(type: 'documentchange', callback: (event: DocumentChangeEvent) => void): void
+METHOD	figma.on(type: 'slidesviewchange', callback: (event: SlidesViewChangeEvent) => void): void
+METHOD	figma.on(type: 'canvasviewchange', callback: (event: CanvasViewChangeEvent) => void): void
+METHOD	figma.on(type: 'textreview', callback: (event: TextReviewEvent) => Promise<TextReviewRange[]> | TextReviewRange[]): void
+METHOD	figma.on(type: 'stylechange', callback: (event: StyleChangeEvent) => void): void
+METHOD	figma.once(type: ArgFreeEventType, callback: () => void): void
+METHOD	figma.once(type: 'run', callback: (event: RunEvent) => void): void
+METHOD	figma.once(type: 'drop', callback: (event: DropEvent) => boolean): void
+METHOD	figma.once(type: 'documentchange', callback: (event: DocumentChangeEvent) => void): void
+METHOD	figma.once(type: 'slidesviewchange', callback: (event: SlidesViewChangeEvent) => void): void
+METHOD	figma.once(type: 'canvasviewchange', callback: (event: CanvasViewChangeEvent) => void): void
+METHOD	figma.once(type: 'textreview', callback: (event: TextReviewEvent) => Promise<TextReviewRange[]> | TextReviewRange[]): void
+METHOD	figma.once(type: 'stylechange', callback: (event: StyleChangeEvent) => void): void
+METHOD	figma.off(type: ArgFreeEventType, callback: () => void): void
+METHOD	figma.off(type: 'run', callback: (event: RunEvent) => void): void
+METHOD	figma.off(type: 'drop', callback: (event: DropEvent) => boolean): void
+METHOD	figma.off(type: 'documentchange', callback: (event: DocumentChangeEvent) => void): void
+METHOD	figma.off(type: 'slidesviewchange', callback: (event: SlidesViewChangeEvent) => void): void
+METHOD	figma.off(type: 'canvasviewchange', callback: (event: CanvasViewChangeEvent) => void): void
+METHOD	figma.off(type: 'textreview', callback: (event: TextReviewEvent) => Promise<TextReviewRange[]> | TextReviewRange[]): void
+METHOD	figma.off(type: 'stylechange', callback: (event: StyleChangeEvent) => void): void
+PROPERTY	figma.readonly mixed: unique symbol
+METHOD	figma.createRectangle(): RectangleNode
+METHOD	figma.createLine(): LineNode
+METHOD	figma.createEllipse(): EllipseNode
+METHOD	figma.createPolygon(): PolygonNode
+METHOD	figma.createStar(): StarNode
+METHOD	figma.createVector(): VectorNode
+METHOD	figma.createText(): TextNode
+METHOD	figma.createFrame(): FrameNode
+METHOD	figma.createComponent(): ComponentNode
+METHOD	figma.createComponentFromNode(node: SceneNode): ComponentNode
+METHOD	figma.createPage(): PageNode
+METHOD	figma.createPageDivider(dividerName?: string): PageNode
+METHOD	figma.createSlice(): SliceNode
+METHOD	figma.createSlide(row?: number, col?: number): SlideNode
+METHOD	figma.createSlideRow(row?: number): SlideRowNode
+METHOD	figma.createSticky(): StickyNode
+METHOD	figma.createConnector(): ConnectorNode
+METHOD	figma.createShapeWithText(): ShapeWithTextNode
+METHOD	figma.createCodeBlock(): CodeBlockNode
+METHOD	figma.createSection(): SectionNode
+METHOD	figma.createTable(numRows?: number, numColumns?: number): TableNode
+METHOD	figma.createTextPath(node: VectorNode, startSegment: number, startPosition: number): TextPathNode
+METHOD	figma.createNodeFromJSXAsync(jsx: any): Promise<SceneNode>
+METHOD	figma.createBooleanOperation(): BooleanOperationNode
+METHOD	figma.createPaintStyle(): PaintStyle
+METHOD	figma.createTextStyle(): TextStyle
+METHOD	figma.createEffectStyle(): EffectStyle
+METHOD	figma.createGridStyle(): GridStyle
+METHOD	figma.createCustomAnimationStyle(): CustomAnimationStyle
+METHOD	figma.getLocalPaintStylesAsync(): Promise<PaintStyle[]>
+METHOD	figma.getLocalPaintStyles(): PaintStyle[]
+METHOD	figma.getLocalTextStylesAsync(): Promise<TextStyle[]>
+METHOD	figma.getLocalTextStyles(): TextStyle[]
+METHOD	figma.getLocalEffectStylesAsync(): Promise<EffectStyle[]>
+METHOD	figma.getLocalEffectStyles(): EffectStyle[]
+METHOD	figma.getLocalGridStylesAsync(): Promise<GridStyle[]>
+METHOD	figma.getLocalGridStyles(): GridStyle[]
+METHOD	figma.getLocalCustomAnimationStylesAsync(): Promise<CustomAnimationStyle[]>
+METHOD	figma.getLocalCustomAnimationStyles(): CustomAnimationStyle[]
+METHOD	figma.getSelectionColors(): null | {
+METHOD	figma.moveLocalPaintStyleAfter(targetNode: PaintStyle, reference: PaintStyle | null): void
+METHOD	figma.moveLocalTextStyleAfter(targetNode: TextStyle, reference: TextStyle | null): void
+METHOD	figma.moveLocalEffectStyleAfter(targetNode: EffectStyle, reference: EffectStyle | null): void
+METHOD	figma.moveLocalGridStyleAfter(targetNode: GridStyle, reference: GridStyle | null): void
+METHOD	figma.moveLocalCustomAnimationStyleAfter(targetNode: CustomAnimationStyle, reference: CustomAnimationStyle | null): void
+METHOD	figma.moveLocalPaintFolderAfter(targetFolder: string, reference: string | null): void
+METHOD	figma.moveLocalTextFolderAfter(targetFolder: string, reference: string | null): void
+METHOD	figma.moveLocalEffectFolderAfter(targetFolder: string, reference: string | null): void
+METHOD	figma.moveLocalGridFolderAfter(targetFolder: string, reference: string | null): void
+METHOD	figma.moveLocalCustomAnimationFolderAfter(targetFolder: string, reference: string | null): void
+METHOD	figma.importComponentByKeyAsync(key: string): Promise<ComponentNode>
+METHOD	figma.importComponentSetByKeyAsync(key: string): Promise<ComponentSetNode>
+METHOD	figma.importStyleByKeyAsync(key: string): Promise<BaseStyle>
+METHOD	figma.listAvailableShaders(): Promise<Shader[]>
+METHOD	figma.importShaderById(id: string): Promise<Shader>
+METHOD	figma.listAvailableFontsAsync(): Promise<Font[]>
+METHOD	figma.loadFontAsync(fontName: FontNameInput): Promise<void>
+METHOD	figma.getFontFamilyVariationAxes(family: string): string[] | null
+PROPERTY	figma.readonly hasMissingFont: boolean
+METHOD	figma.createNodeFromSvg(svg: string): FrameNode
+METHOD	figma.createImage(data: Uint8Array): Image
+METHOD	figma.createImageAsync(src: string): Promise<Image>
+METHOD	figma.getImageByHash(hash: string): Image | null
+METHOD	figma.createVideoAsync(data: Uint8Array): Promise<Video>
+METHOD	figma.createLinkPreviewAsync(url: string): Promise<EmbedNode | LinkUnfurlNode>
+METHOD	figma.createGif(hash: string): MediaNode
+METHOD	figma.combineAsVariants(nodes: ReadonlyArray<ComponentNode>, parent: BaseNode & ChildrenMixin, index?: number): ComponentSetNode
+METHOD	figma.group(nodes: ReadonlyArray<BaseNode>, parent: BaseNode & ChildrenMixin, index?: number): GroupNode
+METHOD	figma.transformGroup(nodes: ReadonlyArray<SceneNode>, parent: BaseNode & ChildrenMixin, index: number, modifiers: TransformModifier[]): TransformGroupNode
+METHOD	figma.flatten(nodes: ReadonlyArray<BaseNode>, parent?: BaseNode & ChildrenMixin, index?: number): VectorNode
+METHOD	figma.union(nodes: ReadonlyArray<BaseNode>, parent: BaseNode & ChildrenMixin, index?: number): BooleanOperationNode
+METHOD	figma.subtract(nodes: ReadonlyArray<BaseNode>, parent: BaseNode & ChildrenMixin, index?: number): BooleanOperationNode
+METHOD	figma.intersect(nodes: ReadonlyArray<BaseNode>, parent: BaseNode & ChildrenMixin, index?: number): BooleanOperationNode
+METHOD	figma.exclude(nodes: ReadonlyArray<BaseNode>, parent: BaseNode & ChildrenMixin, index?: number): BooleanOperationNode
+METHOD	figma.ungroup(node: SceneNode & ChildrenMixin): Array<SceneNode>
+METHOD	figma.base64Encode(data: Uint8Array): string
+METHOD	figma.base64Decode(data: string): Uint8Array
+METHOD	figma.getFileThumbnailNodeAsync(): Promise<
+METHOD	figma.getFileThumbnailNode(): FrameNode | ComponentNode | ComponentSetNode | SectionNode | null
+METHOD	figma.setFileThumbnailNodeAsync(node: FrameNode | ComponentNode | ComponentSetNode | SectionNode | null): Promise<void>
+METHOD	figma.loadAllPagesAsync(): Promise<void>
+METHOD	figma.getSlideGrid(): Array<Array<SlideNode>>
+METHOD	figma.setSlideGrid(slideGrid: Array<Array<SlideNode>>): void
+METHOD	figma.getCanvasGrid(): Array<Array<SceneNode>>
+METHOD	figma.setCanvasGrid(canvasGrid: Array<Array<SceneNode>>): void
+METHOD	figma.createCanvasRow(rowIndex?: number): SceneNode
+METHOD	figma.moveNodesToCoord(nodeIds: string[], rowIndex?: number, columnIndex?: number): void
+METHOD	figma.loadBrushesAsync(brushType: 'STRETCH' | 'SCATTER'): Promise<void>
+PROPERTY	VersionHistoryResult.id: string
+METHOD	figma.variables.getVariableByIdAsync(id: string): Promise<Variable | null>
+METHOD	figma.variables.getVariableById(id: string): Variable | null
+METHOD	figma.variables.getVariableCollectionByIdAsync(id: string): Promise<VariableCollection | null>
+METHOD	figma.variables.getVariableCollectionById(id: string): VariableCollection | null
+METHOD	figma.variables.getLocalVariablesAsync(type?: VariableResolvedDataType): Promise<Variable[]>
+METHOD	figma.variables.getLocalVariables(type?: VariableResolvedDataType): Variable[]
+METHOD	figma.variables.getLocalVariableCollectionsAsync(): Promise<VariableCollection[]>
+METHOD	figma.variables.getLocalVariableCollections(): VariableCollection[]
+METHOD	figma.variables.createVariable(name: string, collectionId: string, resolvedType: VariableResolvedDataType): Variable
+METHOD	figma.variables.createVariable(name: string, collection: VariableCollection, resolvedType: VariableResolvedDataType): Variable
+METHOD	figma.variables.createVariableCollection(name: string): VariableCollection
+METHOD	figma.variables.extendLibraryCollectionByKeyAsync(collectionKey: string, name: string): Promise<ExtendedVariableCollection>
+METHOD	figma.variables.createVariableAlias(variable: Variable): VariableAlias
+METHOD	figma.variables.createVariableAliasByIdAsync(variableId: string): Promise<VariableAlias>
+METHOD	figma.variables.setBoundVariableForPaint(paint: SolidPaint, field: VariableBindablePaintField, variable: Variable | null): SolidPaint
+METHOD	figma.variables.setBoundVariableForEffect(effect: Effect, field: VariableBindableEffectField, variable: Variable | null): Effect
+METHOD	figma.variables.setBoundVariableForLayoutGrid(layoutGrid: LayoutGrid, field: VariableBindableLayoutGridField, variable: Variable | null): LayoutGrid
+METHOD	figma.variables.importVariableByKeyAsync(key: string): Promise<Variable>
+PROPERTY	LibraryVariableCollection.name: string
+PROPERTY	LibraryVariableCollection.key: string
+PROPERTY	LibraryVariableCollection.libraryName: string
+PROPERTY	LibraryVariable.name: string
+PROPERTY	LibraryVariable.key: string
+PROPERTY	LibraryVariable.resolvedType: VariableResolvedDataType
+METHOD	figma.annotations.getAnnotationCategoriesAsync(): Promise<AnnotationCategory[]>
+METHOD	figma.annotations.getAnnotationCategoryByIdAsync(id: string): Promise<AnnotationCategory | null>
+METHOD	figma.annotations.addAnnotationCategoryAsync(categoryInput: {
+METHOD	figma.buzz.createFrame(rowIndex?: number, columnIndex?: number): FrameNode
+METHOD	figma.buzz.createInstance(component: ComponentNode, rowIndex: number, columnIndex?: number): InstanceNode
+METHOD	figma.buzz.getBuzzAssetTypeForNode(node: SceneNode): BuzzAssetType | null
+METHOD	figma.buzz.setBuzzAssetTypeForNode(node: SceneNode, assetType: BuzzAssetType): void
+METHOD	figma.buzz.getTextContent(node: SceneNode): BuzzTextField[]
+METHOD	figma.buzz.getMediaContent(node: SceneNode): BuzzMediaField[]
+METHOD	figma.buzz.smartResize(node: SceneNode, width: number, height: number): void
+PROPERTY	BuzzTextField.readonly value: string | null
+PROPERTY	BuzzTextField.readonly node: TextNode | null
+METHOD	BuzzTextField.setValueAsync(value: string): Promise<void>
+PROPERTY	BuzzMediaField.readonly type: 'IMAGE' | 'VIDEO' | null
+PROPERTY	BuzzMediaField.readonly hash: string | null
+PROPERTY	BuzzMediaField.readonly node: SceneNode | null
+METHOD	BuzzMediaField.setMediaAsync(paint: ImagePaint | VideoPaint): Promise<void>
+METHOD	figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync(): Promise<LibraryVariableCollection[]>
+METHOD	figma.teamLibrary.getVariablesInLibraryCollectionAsync(libraryCollectionKey: string): Promise<LibraryVariable[]>
+PROPERTY	figma.payments.readonly status: PaymentStatus
+METHOD	figma.payments.setPaymentStatusInDevelopment(status: PaymentStatus): void
+METHOD	figma.payments.getUserFirstRanSecondsAgo(): number
+METHOD	figma.payments.initiateCheckoutAsync(options?: {
+METHOD	figma.payments.requestCheckout(): void
+METHOD	figma.payments.getPluginPaymentTokenAsync(): Promise<string>
+METHOD	figma.clientStorage.getAsync(key: string): Promise<any | undefined>
+METHOD	figma.clientStorage.setAsync(key: string, value: any): Promise<void>
+METHOD	figma.clientStorage.deleteAsync(key: string): Promise<void>
+METHOD	figma.clientStorage.keysAsync(): Promise<string[]>
+PROPERTY	NotificationOptions.timeout?: number
+PROPERTY	NotificationOptions.error?: boolean
+PROPERTY	NotificationOptions.onDequeue?: (reason: NotifyDequeueReason) => void
+PROPERTY	NotificationOptions.button?: {
+PROPERTY	NotificationHandler.cancel: () => void
+PROPERTY	figma.motion.readonly playheadPosition: number | undefined
+METHOD	figma.motion.figmaAnimationStyles(): AvailableAnimationStyle[]
+METHOD	figma.motion.physicalSpringToNormalized(spring: PhysicalSpring): number
+PROPERTY	ShowUIOptions.visible?: boolean
+PROPERTY	ShowUIOptions.title?: string
+PROPERTY	ShowUIOptions.width?: number
+PROPERTY	ShowUIOptions.height?: number
+PROPERTY	ShowUIOptions.position?: {
+PROPERTY	ShowUIOptions.themeColors?: boolean
+PROPERTY	UIPostMessageOptions.origin?: string
+PROPERTY	OnMessageProperties.origin: string
+METHOD	figma.ui.show(): void
+METHOD	figma.ui.hide(): void
+METHOD	figma.ui.resize(width: number, height: number): void
+METHOD	figma.ui.reposition(x: number, y: number): void
+METHOD	figma.ui.getPosition(): {
+METHOD	figma.ui.close(): void
+METHOD	figma.ui.postMessage(pluginMessage: any, options?: UIPostMessageOptions): void
+PROPERTY	figma.ui.onmessage: MessageEventHandler | undefined
+METHOD	figma.ui.on(type: 'message', callback: MessageEventHandler): void
+METHOD	figma.ui.once(type: 'message', callback: MessageEventHandler): void
+METHOD	figma.ui.off(type: 'message', callback: MessageEventHandler): void
+METHOD	figma.util.rgb(color: string | RGBWithColorSpace | RGBAWithColorSpace | ColorWithColorSpace): RGBWithColorSpace
+METHOD	figma.util.rgba(color: string | RGBWithColorSpace | RGBAWithColorSpace | ColorWithColorSpace, alphaOverride?: number): RGBAWithColorSpace
+METHOD	figma.util.solidPaint(color: string | RGBWithColorSpace | RGBAWithColorSpace | ColorWithColorSpace, overrides?: Partial<SolidPaint>): SolidPaint
+METHOD	figma.util.normalizeMarkdown(markdown: string): string
+PROPERTY	ColorPalettes.figJamBase: ColorPalette
+PROPERTY	ColorPalettes.figJamBaseLight: ColorPalette
+PROPERTY	figma.constants.colors: ColorPalettes
+METHOD	figma.codegen.on(type: 'generate', callback: (event: CodegenEvent) => Promise<CodegenResult[]> | CodegenResult[]): void
+METHOD	figma.codegen.on(type: 'preferenceschange', callback: (event: CodegenPreferencesEvent) => Promise<void>): void
+METHOD	figma.codegen.once(type: 'generate', callback: (event: CodegenEvent) => Promise<CodegenResult[]> | CodegenResult[]): void
+METHOD	figma.codegen.once(type: 'preferenceschange', callback: (event: CodegenPreferencesEvent) => Promise<void>): void
+METHOD	figma.codegen.off(type: 'generate', callback: (event: CodegenEvent) => Promise<CodegenResult[]> | CodegenResult[]): void
+METHOD	figma.codegen.off(type: 'preferenceschange', callback: (event: CodegenPreferencesEvent) => Promise<void>): void
+PROPERTY	figma.codegen.readonly preferences: CodegenPreferences
+PROPERTY	figma.codegen.refresh: () => void
+PROPERTY	DevResource.readonly name: string
+PROPERTY	DevResource.readonly url: string
+PROPERTY	DevResource.readonly inheritedNodeId?: string
+PROPERTY	DevResourceWithNodeId.nodeId: string
+METHOD	figma.devResources.on(type: 'linkpreview', callback: (event: LinkPreviewEvent) => Promise<LinkPreviewResult> | LinkPreviewResult): void
+METHOD	figma.devResources.on(type: 'auth', callback: (event: AuthEvent) => Promise<AuthResult> | AuthResult): void
+METHOD	figma.devResources.on(type: 'open', callback: (event: DevResourceOpenEvent) => void): void
+METHOD	figma.devResources.once(type: 'linkpreview', callback: (event: LinkPreviewEvent) => Promise<LinkPreviewResult> | LinkPreviewResult): void
+METHOD	figma.devResources.once(type: 'auth', callback: (event: AuthEvent) => Promise<AuthResult> | AuthResult): void
+METHOD	figma.devResources.once(type: 'open', callback: (event: DevResourceOpenEvent) => void): void
+METHOD	figma.devResources.off(type: 'linkpreview', callback: (event: LinkPreviewEvent) => Promise<LinkPreviewResult> | LinkPreviewResult): void
+METHOD	figma.devResources.off(type: 'auth', callback: (event: AuthEvent) => Promise<AuthResult> | AuthResult): void
+METHOD	figma.devResources.off(type: 'open', callback: (event: DevResourceOpenEvent) => void): void
+PROPERTY	figma.timer.readonly remaining: number
+PROPERTY	figma.timer.readonly total: number
+PROPERTY	figma.timer.readonly state: 'STOPPED' | 'PAUSED' | 'RUNNING'
+PROPERTY	figma.timer.pause: () => void
+PROPERTY	figma.timer.resume: () => void
+PROPERTY	figma.timer.start: (seconds: number) => void
+PROPERTY	figma.timer.stop: () => void
+PROPERTY	figma.viewport.center: Vector
+PROPERTY	figma.viewport.zoom: number
+METHOD	figma.viewport.scrollAndZoomIntoView(nodes: ReadonlyArray<BaseNode>): void
+PROPERTY	figma.viewport.readonly bounds: Rect
+PROPERTY	figma.viewport.slidesView: 'grid' | 'single-slide'
+PROPERTY	figma.viewport.canvasView: 'grid' | 'single-asset'
+METHOD	figma.textreview.requestToBeEnabledAsync(): Promise<void>
+METHOD	figma.textreview.requestToBeDisabledAsync(): Promise<void>
+PROPERTY	figma.textreview.readonly isEnabled: boolean
+METHOD	SuggestionResults.setSuggestions(suggestions: Array< | string | { name: string data?: any icon?: string | Uint8Array iconUrl?: string } >): void
+METHOD	SuggestionResults.setError(message: string): void
+METHOD	SuggestionResults.setLoadingMessage(message: string): void
+METHOD	figma.parameters.on(type: 'input', callback: (event: ParameterInputEvent) => void): void
+METHOD	figma.parameters.once(type: 'input', callback: (event: ParameterInputEvent) => void): void
+METHOD	figma.parameters.off(type: 'input', callback: (event: ParameterInputEvent) => void): void
+PROPERTY	RunParametersEvent.command: string
+PROPERTY	RunParametersEvent.parameters: ParametersType
+PROPERTY	OpenDevResourcesEvent.command: 'open-dev-resource'
+PROPERTY	OpenDevResourcesEvent.parameters?: undefined
+PROPERTY	OpenDevResourcesEvent.link: {
+PROPERTY	SlidesViewChangeEvent.view: 'GRID' | 'SINGLE_SLIDE'
+PROPERTY	CanvasViewChangeEvent.view: 'SINGLE_ASSET' | 'GRID'
+PROPERTY	DropEvent.node: BaseNode | SceneNode
+PROPERTY	DropEvent.x: number
+PROPERTY	DropEvent.y: number
+PROPERTY	DropEvent.absoluteX: number
+PROPERTY	DropEvent.absoluteY: number
+PROPERTY	DropEvent.items: DropItem[]
+PROPERTY	DropEvent.files: DropFile[]
+PROPERTY	DropEvent.dropMetadata?: any
+PROPERTY	DropItem.type: string
+PROPERTY	DropItem.data: string
+PROPERTY	DropFile.name: string
+PROPERTY	DropFile.type: string
+METHOD	DropFile.getBytesAsync(): Promise<Uint8Array>
+METHOD	DropFile.getTextAsync(): Promise<string>
+PROPERTY	DocumentChangeEvent.documentChanges: DocumentChange[]
+PROPERTY	StyleChangeEvent.styleChanges: StyleChange[]
+PROPERTY	BaseDocumentChange.id: string
+PROPERTY	BaseDocumentChange.origin: 'LOCAL' | 'REMOTE'
+PROPERTY	BaseNodeChange.node: SceneNode | RemovedNode
+PROPERTY	RemovedNode.readonly removed: true
+PROPERTY	RemovedNode.readonly type: NodeType
+PROPERTY	RemovedNode.readonly id: string
+PROPERTY	CreateChange.type: 'CREATE'
+PROPERTY	DeleteChange.type: 'DELETE'
+PROPERTY	PropertyChange.type: 'PROPERTY_CHANGE'
+PROPERTY	PropertyChange.properties: NodeChangeProperty[]
+PROPERTY	BaseStyleChange.style: BaseStyle | null
+PROPERTY	StyleCreateChange.type: 'STYLE_CREATE'
+PROPERTY	StyleDeleteChange.type: 'STYLE_DELETE'
+PROPERTY	StyleDeleteChange.style: null
+PROPERTY	StylePropertyChange.type: 'STYLE_PROPERTY_CHANGE'
+PROPERTY	StylePropertyChange.properties: StyleChangeProperty[]
+PROPERTY	NodeChangeEvent.nodeChanges: NodeChange[]
+PROPERTY	Vector.readonly x: number
+PROPERTY	Vector.readonly y: number
+PROPERTY	Rect.readonly x: number
+PROPERTY	Rect.readonly y: number
+PROPERTY	Rect.readonly width: number
+PROPERTY	Rect.readonly height: number
+PROPERTY	RGB.readonly r: number
+PROPERTY	RGB.readonly g: number
+PROPERTY	RGB.readonly b: number
+PROPERTY	RGBA.readonly r: number
+PROPERTY	RGBA.readonly g: number
+PROPERTY	RGBA.readonly b: number
+PROPERTY	RGBA.readonly a: number
+PROPERTY	RGBWithColorSpace.readonly sourceColor?: ColorWithColorSpace
+PROPERTY	RGBAWithColorSpace.readonly sourceColor?: ColorWithColorSpace
+PROPERTY	FontName.readonly family: string
+PROPERTY	FontName.readonly style: string
+PROPERTY	FontName.readonly variationSettings?: FontVariationSettings
+PROPERTY	FontNameInput.readonly family: string
+PROPERTY	FontNameInput.readonly style?: string
+PROPERTY	FontNameInput.readonly variationSettings?: FontVariationSettings
+PROPERTY	ArcData.readonly startingAngle: number
+PROPERTY	ArcData.readonly endingAngle: number
+PROPERTY	ArcData.readonly innerRadius: number
+PROPERTY	DropShadowEffect.readonly type: 'DROP_SHADOW'
+PROPERTY	DropShadowEffect.readonly color: RGBAWithColorSpace
+PROPERTY	DropShadowEffect.readonly offset: Vector
+PROPERTY	DropShadowEffect.readonly radius: number
+PROPERTY	DropShadowEffect.readonly spread?: number
+PROPERTY	DropShadowEffect.readonly visible: boolean
+PROPERTY	DropShadowEffect.readonly blendMode: BlendMode
+PROPERTY	DropShadowEffect.readonly showShadowBehindNode?: boolean
+PROPERTY	DropShadowEffect.readonly boundVariables?: {
+PROPERTY	InnerShadowEffect.readonly type: 'INNER_SHADOW'
+PROPERTY	InnerShadowEffect.readonly color: RGBAWithColorSpace
+PROPERTY	InnerShadowEffect.readonly offset: Vector
+PROPERTY	InnerShadowEffect.readonly radius: number
+PROPERTY	InnerShadowEffect.readonly spread?: number
+PROPERTY	InnerShadowEffect.readonly visible: boolean
+PROPERTY	InnerShadowEffect.readonly blendMode: BlendMode
+PROPERTY	InnerShadowEffect.readonly boundVariables?: {
+PROPERTY	BlurEffectBase.readonly type: 'LAYER_BLUR' | 'BACKGROUND_BLUR'
+PROPERTY	BlurEffectBase.readonly radius: number
+PROPERTY	BlurEffectBase.readonly visible: boolean
+PROPERTY	BlurEffectBase.readonly boundVariables?: {
+PROPERTY	BlurEffectNormal.readonly blurType: 'NORMAL'
+PROPERTY	BlurEffectProgressive.readonly blurType: 'PROGRESSIVE'
+PROPERTY	BlurEffectProgressive.readonly startRadius: number
+PROPERTY	BlurEffectProgressive.readonly startOffset: Vector
+PROPERTY	BlurEffectProgressive.readonly endOffset: Vector
+PROPERTY	NoiseEffectBase.readonly type: 'NOISE'
+PROPERTY	NoiseEffectBase.readonly color: RGBAWithColorSpace
+PROPERTY	NoiseEffectBase.readonly visible: boolean
+PROPERTY	NoiseEffectBase.readonly blendMode: BlendMode
+PROPERTY	NoiseEffectBase.readonly noiseSize: number
+PROPERTY	NoiseEffectBase.readonly noiseSizeVector?: Vector
+PROPERTY	NoiseEffectBase.readonly density: number
+PROPERTY	NoiseEffectBase.readonly boundVariables?: {}
+PROPERTY	NoiseEffectMonotone.readonly noiseType: 'MONOTONE'
+PROPERTY	NoiseEffectDuotone.readonly noiseType: 'DUOTONE'
+PROPERTY	NoiseEffectDuotone.readonly secondaryColor: RGBAWithColorSpace
+PROPERTY	NoiseEffectMultitone.readonly noiseType: 'MULTITONE'
+PROPERTY	NoiseEffectMultitone.readonly opacity: number
+PROPERTY	TextureEffect.readonly type: 'TEXTURE'
+PROPERTY	TextureEffect.readonly visible: boolean
+PROPERTY	TextureEffect.readonly noiseSize: number
+PROPERTY	TextureEffect.readonly noiseSizeVector?: Vector
+PROPERTY	TextureEffect.readonly radius: number
+PROPERTY	TextureEffect.readonly clipToShape: boolean
+PROPERTY	TextureEffect.readonly boundVariables?: {}
+PROPERTY	GlassEffect.readonly type: 'GLASS'
+PROPERTY	GlassEffect.readonly visible: boolean
+PROPERTY	GlassEffect.readonly lightIntensity: number
+PROPERTY	GlassEffect.readonly lightAngle: number
+PROPERTY	GlassEffect.readonly refraction: number
+PROPERTY	GlassEffect.readonly depth: number
+PROPERTY	GlassEffect.readonly dispersion: number
+PROPERTY	GlassEffect.readonly radius: number
+PROPERTY	GlassEffect.readonly boundVariables?: {}
+PROPERTY	ShaderEffect.readonly type: 'SHADER'
+PROPERTY	ShaderEffect.readonly visible: boolean
+PROPERTY	ShaderEffect.readonly id: string
+PROPERTY	ShaderEffect.readonly properties?: {
+PROPERTY	ShaderEffect.readonly propertyMetadata?: {
+PROPERTY	Constraints.readonly horizontal: ConstraintType
+PROPERTY	Constraints.readonly vertical: ConstraintType
+PROPERTY	ColorStop.readonly position: number
+PROPERTY	ColorStop.readonly color: RGBAWithColorSpace
+PROPERTY	ColorStop.readonly boundVariables?: {
+PROPERTY	ImageFilters.readonly exposure?: number
+PROPERTY	ImageFilters.readonly contrast?: number
+PROPERTY	ImageFilters.readonly saturation?: number
+PROPERTY	ImageFilters.readonly temperature?: number
+PROPERTY	ImageFilters.readonly tint?: number
+PROPERTY	ImageFilters.readonly highlights?: number
+PROPERTY	ImageFilters.readonly shadows?: number
+PROPERTY	SolidPaint.readonly type: 'SOLID'
+PROPERTY	SolidPaint.readonly color: RGBWithColorSpace
+PROPERTY	SolidPaint.readonly visible?: boolean
+PROPERTY	SolidPaint.readonly opacity?: number
+PROPERTY	SolidPaint.readonly blendMode?: BlendMode
+PROPERTY	SolidPaint.readonly boundVariables?: {
+PROPERTY	GradientPaint.readonly type: 'GRADIENT_LINEAR' | 'GRADIENT_RADIAL' | 'GRADIENT_ANGULAR' | 'GRADIENT_DIAMOND'
+PROPERTY	GradientPaint.readonly gradientTransform: Transform
+PROPERTY	GradientPaint.readonly gradientStops: ReadonlyArray<ColorStop>
+PROPERTY	GradientPaint.readonly visible?: boolean
+PROPERTY	GradientPaint.readonly opacity?: number
+PROPERTY	GradientPaint.readonly blendMode?: BlendMode
+PROPERTY	ImagePaint.readonly type: 'IMAGE'
+PROPERTY	ImagePaint.readonly scaleMode: 'FILL' | 'FIT' | 'CROP' | 'TILE'
+PROPERTY	ImagePaint.readonly imageHash: string | null
+PROPERTY	ImagePaint.readonly imageTransform?: Transform
+PROPERTY	ImagePaint.readonly scalingFactor?: number
+PROPERTY	ImagePaint.readonly rotation?: number
+PROPERTY	ImagePaint.readonly filters?: ImageFilters
+PROPERTY	ImagePaint.readonly visible?: boolean
+PROPERTY	ImagePaint.readonly opacity?: number
+PROPERTY	ImagePaint.readonly blendMode?: BlendMode
+PROPERTY	VideoPaint.readonly type: 'VIDEO'
+PROPERTY	VideoPaint.readonly scaleMode: 'FILL' | 'FIT' | 'CROP' | 'TILE'
+PROPERTY	VideoPaint.readonly videoHash: string | null
+PROPERTY	VideoPaint.readonly videoTransform?: Transform
+PROPERTY	VideoPaint.readonly scalingFactor?: number
+PROPERTY	VideoPaint.readonly rotation?: number
+PROPERTY	VideoPaint.readonly filters?: ImageFilters
+PROPERTY	VideoPaint.readonly visible?: boolean
+PROPERTY	VideoPaint.readonly opacity?: number
+PROPERTY	VideoPaint.readonly blendMode?: BlendMode
+PROPERTY	PatternPaint.readonly type: 'PATTERN'
+PROPERTY	PatternPaint.readonly sourceNodeId: string
+PROPERTY	PatternPaint.readonly tileType: 'RECTANGULAR' | 'HORIZONTAL_HEXAGONAL' | 'VERTICAL_HEXAGONAL'
+PROPERTY	PatternPaint.readonly scalingFactor: number
+PROPERTY	PatternPaint.readonly spacing: Vector
+PROPERTY	PatternPaint.readonly horizontalAlignment: 'START' | 'CENTER' | 'END'
+PROPERTY	PatternPaint.readonly visible?: boolean
+PROPERTY	PatternPaint.readonly opacity?: number
+PROPERTY	PatternPaint.readonly blendMode?: BlendMode
+PROPERTY	ShaderPaint.readonly type: 'SHADER'
+PROPERTY	ShaderPaint.readonly id: string
+PROPERTY	ShaderPaint.readonly properties?: {
+PROPERTY	ShaderPaint.readonly propertyMetadata?: {
+PROPERTY	ShaderPaint.readonly visible?: boolean
+PROPERTY	ShaderPaint.readonly opacity?: number
+PROPERTY	ShaderPaint.readonly blendMode?: BlendMode
+PROPERTY	ShaderPropertyDefinition.readonly name: string
+PROPERTY	ShaderPropertyDefinition.readonly type: | 'BOOLEAN' | 'TEXT' | 'NUMBER' | 'IMAGE' | 'INSTANCE_SWAP' | 'SLOT' | 'COLOR' | 'POINT' | 'LINE' | 'CIRCLE' | 'CIRCLE_POINT' | 'COLOR_POINT'
+PROPERTY	ShaderPropertyDefinition.readonly defaultValue?: ShaderPropertyValue
+PROPERTY	ShaderPropertyDefinition.readonly description?: string
+PROPERTY	Shader.readonly id: string
+PROPERTY	Shader.readonly name: string
+PROPERTY	Shader.readonly type: 'effect' | 'fill'
+PROPERTY	Shader.readonly imported: boolean
+PROPERTY	Shader.readonly propertyDefinitions?: {
+PROPERTY	Guide.readonly axis: 'X' | 'Y'
+PROPERTY	Guide.readonly offset: number
+PROPERTY	RowsColsLayoutGrid.readonly pattern: 'ROWS' | 'COLUMNS'
+PROPERTY	RowsColsLayoutGrid.readonly alignment: 'MIN' | 'MAX' | 'STRETCH' | 'CENTER'
+PROPERTY	RowsColsLayoutGrid.readonly gutterSize: number
+PROPERTY	RowsColsLayoutGrid.readonly count: number
+PROPERTY	RowsColsLayoutGrid.readonly sectionSize?: number
+PROPERTY	RowsColsLayoutGrid.readonly offset?: number
+PROPERTY	RowsColsLayoutGrid.readonly visible?: boolean
+PROPERTY	RowsColsLayoutGrid.readonly color?: RGBA
+PROPERTY	RowsColsLayoutGrid.readonly boundVariables?: {
+PROPERTY	GridLayoutGrid.readonly pattern: 'GRID'
+PROPERTY	GridLayoutGrid.readonly sectionSize: number
+PROPERTY	GridLayoutGrid.readonly visible?: boolean
+PROPERTY	GridLayoutGrid.readonly color?: RGBA
+PROPERTY	GridLayoutGrid.readonly boundVariables?: {
+PROPERTY	ExportSettingsConstraints.readonly type: 'SCALE' | 'WIDTH' | 'HEIGHT'
+PROPERTY	ExportSettingsConstraints.readonly value: number
+PROPERTY	ExportSettingsImage.readonly format: 'JPG' | 'PNG'
+PROPERTY	ExportSettingsImage.readonly contentsOnly?: boolean
+PROPERTY	ExportSettingsImage.readonly useAbsoluteBounds?: boolean
+PROPERTY	ExportSettingsImage.readonly suffix?: string
+PROPERTY	ExportSettingsImage.readonly constraint?: ExportSettingsConstraints
+PROPERTY	ExportSettingsImage.readonly colorProfile?: 'DOCUMENT' | 'SRGB' | 'DISPLAY_P3_V4'
+PROPERTY	ExportSettingsSVGBase.readonly contentsOnly?: boolean
+PROPERTY	ExportSettingsSVGBase.readonly useAbsoluteBounds?: boolean
+PROPERTY	ExportSettingsSVGBase.readonly suffix?: string
+PROPERTY	ExportSettingsSVGBase.readonly svgOutlineText?: boolean
+PROPERTY	ExportSettingsSVGBase.readonly svgIdAttribute?: boolean
+PROPERTY	ExportSettingsSVGBase.readonly svgSimplifyStroke?: boolean
+PROPERTY	ExportSettingsSVGBase.readonly colorProfile?: 'DOCUMENT' | 'SRGB' | 'DISPLAY_P3_V4'
+PROPERTY	ExportSettingsSVG.readonly format: 'SVG'
+PROPERTY	ExportSettingsSVGString.readonly format: 'SVG_STRING'
+PROPERTY	ExportSettingsPDF.readonly format: 'PDF'
+PROPERTY	ExportSettingsPDF.readonly contentsOnly?: boolean
+PROPERTY	ExportSettingsPDF.readonly useAbsoluteBounds?: boolean
+PROPERTY	ExportSettingsPDF.readonly suffix?: string
+PROPERTY	ExportSettingsPDF.readonly colorProfile?: 'DOCUMENT' | 'SRGB' | 'DISPLAY_P3_V4'
+PROPERTY	ExportSettingsREST.readonly format: 'JSON_REST_V1'
+PROPERTY	ExportSettingsMP4.readonly format: 'MP4'
+PROPERTY	ExportSettingsMP4.readonly fps?: 12 | 24 | 30 | 60
+PROPERTY	ExportSettingsMP4.readonly quality?: 'LOW' | 'MEDIUM' | 'HIGH'
+PROPERTY	ExportSettingsMP4.readonly constraint?: VideoExportConstraint
+PROPERTY	ExportSettingsGIF.readonly format: 'GIF'
+PROPERTY	ExportSettingsGIF.readonly fps?: 8 | 12 | 15 | 24 | 30
+PROPERTY	ExportSettingsGIF.readonly loopCount?: number
+PROPERTY	ExportSettingsGIF.readonly constraint?: VideoExportConstraint
+PROPERTY	ExportSettingsWEBM.readonly format: 'WEBM'
+PROPERTY	ExportSettingsWEBM.readonly fps?: 12 | 24 | 30 | 60
+PROPERTY	ExportSettingsWEBM.readonly quality?: 'LOW' | 'MEDIUM' | 'HIGH'
+PROPERTY	ExportSettingsWEBM.readonly constraint?: VideoExportConstraint
+PROPERTY	VectorVertex.readonly x: number
+PROPERTY	VectorVertex.readonly y: number
+PROPERTY	VectorVertex.readonly strokeCap?: StrokeCap
+PROPERTY	VectorVertex.readonly strokeJoin?: StrokeJoin
+PROPERTY	VectorVertex.readonly cornerRadius?: number
+PROPERTY	VectorVertex.readonly handleMirroring?: HandleMirroring
+PROPERTY	VectorSegment.readonly start: number
+PROPERTY	VectorSegment.readonly end: number
+PROPERTY	VectorSegment.readonly tangentStart?: Vector
+PROPERTY	VectorSegment.readonly tangentEnd?: Vector
+PROPERTY	VectorRegion.readonly windingRule: WindingRule
+PROPERTY	VectorRegion.readonly loops: ReadonlyArray<ReadonlyArray<number>>
+PROPERTY	VectorRegion.readonly fills?: ReadonlyArray<Paint>
+PROPERTY	VectorRegion.readonly fillStyleId?: string
+PROPERTY	VectorNetwork.readonly vertices: ReadonlyArray<VectorVertex>
+PROPERTY	VectorNetwork.readonly segments: ReadonlyArray<VectorSegment>
+PROPERTY	VectorNetwork.readonly regions?: ReadonlyArray<VectorRegion>
+PROPERTY	VectorPath.readonly windingRule: WindingRule | 'NONE'
+PROPERTY	VectorPath.readonly data: string
+PROPERTY	LetterSpacing.readonly value: number
+PROPERTY	LetterSpacing.readonly unit: 'PIXELS' | 'PERCENT'
+PROPERTY	Font.fontName: FontName
+PROPERTY	StyledTextSegment.characters: string
+PROPERTY	StyledTextSegment.start: number
+PROPERTY	StyledTextSegment.end: number
+PROPERTY	StyledTextSegment.fontSize: number
+PROPERTY	StyledTextSegment.fontName: FontName
+PROPERTY	StyledTextSegment.fontWeight: number
+PROPERTY	StyledTextSegment.fontStyle: FontStyle
+PROPERTY	StyledTextSegment.textDecoration: TextDecoration
+PROPERTY	StyledTextSegment.textDecorationStyle: TextDecorationStyle | null
+PROPERTY	StyledTextSegment.textDecorationOffset: TextDecorationOffset | null
+PROPERTY	StyledTextSegment.textDecorationThickness: TextDecorationThickness | null
+PROPERTY	StyledTextSegment.textDecorationColor: TextDecorationColor | null
+PROPERTY	StyledTextSegment.textDecorationSkipInk: boolean | null
+PROPERTY	StyledTextSegment.textCase: TextCase
+PROPERTY	StyledTextSegment.lineHeight: LineHeight
+PROPERTY	StyledTextSegment.letterSpacing: LetterSpacing
+PROPERTY	StyledTextSegment.fills: Paint[]
+PROPERTY	StyledTextSegment.textStyleId: string
+PROPERTY	StyledTextSegment.fillStyleId: string
+PROPERTY	StyledTextSegment.listOptions: TextListOptions
+PROPERTY	StyledTextSegment.listSpacing: number
+PROPERTY	StyledTextSegment.indentation: number
+PROPERTY	StyledTextSegment.paragraphIndent: number
+PROPERTY	StyledTextSegment.paragraphSpacing: number
+PROPERTY	StyledTextSegment.textWrapStyle: TextWrapStyle
+PROPERTY	StyledTextSegment.hyperlink: HyperlinkTarget | null
+PROPERTY	StyledTextSegment.openTypeFeatures: {
+PROPERTY	StyledTextSegment.boundVariables?: {
+PROPERTY	StyledTextSegment.textStyleOverrides: TextStyleOverrideType[]
+PROPERTY	TextPathStartData.segment: number
+PROPERTY	TextPathStartData.position: number
+PROPERTY	Expression.expressionFunction: ExpressionFunction
+PROPERTY	Expression.expressionArguments: VariableData[]
+PROPERTY	VariableData.type?: VariableDataType
+PROPERTY	VariableData.resolvedType?: VariableResolvedDataType
+PROPERTY	VariableData.value?: VariableValueWithExpression
+PROPERTY	SimpleTransition.readonly type: 'DISSOLVE' | 'SMART_ANIMATE' | 'SCROLL_ANIMATE'
+PROPERTY	SimpleTransition.readonly easing: Easing
+PROPERTY	SimpleTransition.readonly duration: number
+PROPERTY	DirectionalTransition.readonly type: 'MOVE_IN' | 'MOVE_OUT' | 'PUSH' | 'SLIDE_IN' | 'SLIDE_OUT'
+PROPERTY	DirectionalTransition.readonly direction: 'LEFT' | 'RIGHT' | 'TOP' | 'BOTTOM'
+PROPERTY	DirectionalTransition.readonly matchLayers: boolean
+PROPERTY	DirectionalTransition.readonly easing: Easing
+PROPERTY	DirectionalTransition.readonly duration: number
+PROPERTY	Easing.readonly type: | 'EASE_IN' | 'EASE_OUT' | 'EASE_IN_AND_OUT' | 'LINEAR' | 'EASE_IN_BACK' | 'EASE_OUT_BACK' | 'EASE_IN_AND_OUT_BACK' | 'CUSTOM_CUBIC_BEZIER' | 'GENTLE' | 'QUICK' | 'BOUNCY' | 'SLOW'
+PROPERTY	Easing.readonly easingFunctionCubicBezier?: EasingFunctionBezier
+PROPERTY	Easing.readonly easingFunctionSpring?: EasingFunctionSpring
+PROPERTY	EasingFunctionBezier.x1: number
+PROPERTY	EasingFunctionBezier.y1: number
+PROPERTY	EasingFunctionBezier.x2: number
+PROPERTY	EasingFunctionBezier.y2: number
+PROPERTY	EasingFunctionSpring.mass: number
+PROPERTY	EasingFunctionSpring.stiffness: number
+PROPERTY	EasingFunctionSpring.damping: number
+PROPERTY	EasingFunctionSpring.initialVelocity: number
+PROPERTY	MotionEasing.readonly type: | 'EASE_IN' | 'EASE_OUT' | 'EASE_IN_AND_OUT' | 'LINEAR' | 'EASE_IN_BACK' | 'EASE_OUT_BACK' | 'EASE_IN_AND_OUT_BACK' | 'CUSTOM_CUBIC_BEZIER' | 'GENTLE' | 'QUICK' | 'BOUNCY' | 'SLOW'
+PROPERTY	MotionEasing.readonly easingFunctionCubicBezier?: EasingFunctionBezier
+PROPERTY	MotionEasing.readonly easingFunctionSpring?: NormalizedSpring
+PROPERTY	PhysicalSpring.readonly mass: number
+PROPERTY	PhysicalSpring.readonly stiffness: number
+PROPERTY	PhysicalSpring.readonly damping: number
+PROPERTY	NormalizedSpring.readonly bounce: number
+PROPERTY	BaseAnimationStyle.readonly styleId: string
+PROPERTY	BaseAnimationStyle.readonly name: string
+PROPERTY	AvailableAnimationStyle.readonly description?: string
+PROPERTY	AvailableAnimationStyle.readonly props?: {
+PROPERTY	FigmaAnimationStyleConfiguration.readonly type?: 'FIGMA'
+PROPERTY	FigmaAnimationStyleConfiguration.readonly duration?: number
+PROPERTY	FigmaAnimationStyleConfiguration.readonly timelineOffset?: number
+PROPERTY	FigmaAnimationStyleConfiguration.readonly props?: {
+PROPERTY	CustomAnimationStyleConfiguration.readonly type: 'CUSTOM'
+PROPERTY	CustomAnimationStyleConfiguration.readonly timelineOffset?: number
+PROPERTY	AppliedFigmaAnimationStyle.readonly type: 'FIGMA'
+PROPERTY	AppliedFigmaAnimationStyle.readonly id: string
+PROPERTY	AppliedFigmaAnimationStyle.readonly description?: string
+PROPERTY	AppliedCustomAnimationStyle.readonly id: string
+PROPERTY	ManualKeyframeInput.readonly id?: string
+PROPERTY	ManualKeyframeInput.readonly timelinePosition: number
+PROPERTY	ManualKeyframeInput.readonly easing?: MotionEasing | VariableAlias
+PROPERTY	ManualKeyframeInput.readonly value: KeyframeValue
+PROPERTY	ManualKeyframeTrackInput.readonly id?: string
+PROPERTY	ManualKeyframeTrackInput.readonly baseValue?: KeyframeValue
+PROPERTY	ManualKeyframeTrackInput.readonly keyframes: ReadonlyArray<ManualKeyframeInput>
+PROPERTY	ManualKeyframe.readonly id: string
+PROPERTY	ManualKeyframe.readonly easing: MotionEasing | VariableAlias
+PROPERTY	ManualKeyframeBinding.readonly id: string
+PROPERTY	ManualKeyframeBinding.readonly baseValue: KeyframeValue
+PROPERTY	ManualKeyframeBinding.readonly keyframes: ReadonlyArray<ManualKeyframe>
+PROPERTY	ManualKeyframeTrack.readonly id: string
+PROPERTY	ManualKeyframeTrack.readonly keyframeOperation: 'SET' | 'OFFSET' | 'SCALE'
+PROPERTY	ManualKeyframeTrack.readonly keyframes: ReadonlyArray<ManualKeyframe>
+PROPERTY	KeyframeBinding.readonly baseValue: KeyframeValue
+PROPERTY	KeyframeBinding.readonly timelineDuration: number
+PROPERTY	KeyframeBinding.readonly tracks: ReadonlyArray<ManualKeyframeTrack>
+PROPERTY	Timeline.readonly id: string
+PROPERTY	Timeline.readonly duration: number
+PROPERTY	ConnectorEndpointPosition.position: {
+PROPERTY	ConnectorEndpointPositionAndEndpointNodeId.position: {
+PROPERTY	ConnectorEndpointPositionAndEndpointNodeId.endpointNodeId: string
+PROPERTY	ConnectorEndpointEndpointNodeIdAndMagnet.endpointNodeId: string
+PROPERTY	ConnectorEndpointEndpointNodeIdAndMagnet.magnet: 'NONE' | 'AUTO' | 'TOP' | 'LEFT' | 'BOTTOM' | 'RIGHT' | 'CENTER'
+PROPERTY	BaseNodeMixin.readonly id: string
+PROPERTY	BaseNodeMixin.readonly parent: (BaseNode & ChildrenMixin) | null
+PROPERTY	BaseNodeMixin.name: string
+PROPERTY	BaseNodeMixin.readonly removed: boolean
+METHOD	BaseNodeMixin.toString(): string
+METHOD	BaseNodeMixin.remove(): void
+METHOD	BaseNodeMixin.setRelaunchData(data: { [command: string]: string }): void
+METHOD	BaseNodeMixin.getRelaunchData(): {
+PROPERTY	BaseNodeMixin.readonly isAsset: boolean
+METHOD	BaseNodeMixin.getCSSAsync(): Promise<{
+METHOD	BaseNodeMixin.getTopLevelFrame(): FrameNode | undefined
+METHOD	PluginDataMixin.getPluginData(key: string): string
+METHOD	PluginDataMixin.setPluginData(key: string, value: string): void
+METHOD	PluginDataMixin.getPluginDataKeys(): string[]
+METHOD	PluginDataMixin.getSharedPluginData(namespace: string, key: string): string
+METHOD	PluginDataMixin.setSharedPluginData(namespace: string, key: string, value: string): void
+METHOD	PluginDataMixin.getSharedPluginDataKeys(namespace: string): string[]
+METHOD	DevResourcesMixin.getDevResourcesAsync(options?: { includeChildren?: boolean }): Promise<DevResourceWithNodeId[]>
+METHOD	DevResourcesMixin.addDevResourceAsync(url: string, name?: string): Promise<void>
+METHOD	DevResourcesMixin.editDevResourceAsync(currentUrl: string, newValue: { name?: string url?: string }): Promise<void>
+METHOD	DevResourcesMixin.deleteDevResourceAsync(url: string): Promise<void>
+METHOD	DevResourcesMixin.setDevResourcePreviewAsync(url: string, preview: PlainTextElement): Promise<void>
+PROPERTY	DevStatusMixin.devStatus: DevStatus
+PROPERTY	SceneNodeMixin.visible: boolean
+PROPERTY	SceneNodeMixin.locked: boolean
+PROPERTY	SceneNodeMixin.readonly stuckNodes: SceneNode[]
+PROPERTY	SceneNodeMixin.readonly attachedConnectors: ConnectorNode[]
+PROPERTY	SceneNodeMixin.componentPropertyReferences: | {
+PROPERTY	SceneNodeMixin.readonly boundVariables?: {
+METHOD	SceneNodeMixin.setBoundVariable(field: VariableBindableNodeField | VariableBindableTextField, variableId: string | null): void
+METHOD	SceneNodeMixin.setBoundVariable(field: VariableBindableNodeField | VariableBindableTextField, variable: Variable | null): void
+PROPERTY	SceneNodeMixin.readonly inferredVariables?: {
+PROPERTY	SceneNodeMixin.resolvedVariableModes: {
+PROPERTY	MotionNodeMixin.readonly animationStyles: AppliedAnimationStyle[]
+PROPERTY	MotionNodeMixin.readonly animations: Animations
+PROPERTY	MotionNodeMixin.readonly manualKeyframeTracks: ManualKeyframeTracks
+PROPERTY	MotionNodeMixin.readonly timelines: ReadonlyArray<Timeline>
+METHOD	MotionNodeMixin.applyAnimationStyle(styleId: string, animationStyleData?: AnimationStyleConfiguration): string
+METHOD	MotionNodeMixin.removeAnimationStyle(id: string): void
+METHOD	MotionNodeMixin.applyManualKeyframeTrack(field: KeyframeField, track: ManualKeyframeTrackInput): void
+METHOD	MotionNodeMixin.removeManualKeyframeTrack(field: KeyframeField): void
+METHOD	MotionNodeMixin.setTimelineDuration(id: string, duration: number): void
+PROPERTY	StickableMixin.stuckTo: SceneNode | null
+PROPERTY	ChildrenMixin.readonly children: ReadonlyArray<SceneNode>
+METHOD	ChildrenMixin.appendChild(child: SceneNode): void
+METHOD	ChildrenMixin.insertChild(index: number, child: SceneNode): void
+METHOD	ChildrenMixin.findChildren(callback?: (node: SceneNode) => boolean): SceneNode[]
+METHOD	ChildrenMixin.findChild(callback: (node: SceneNode) => boolean): SceneNode | null
+METHOD	ChildrenMixin.findAll(callback?: (node: SceneNode) => boolean): SceneNode[]
+METHOD	ChildrenMixin.findOne(callback: (node: SceneNode) => boolean): SceneNode | null
+METHOD	ChildrenMixin.findAllWithCriteria<T extends NodeType[]>(criteria: FindAllCriteria<T>): Array<
+METHOD	ChildrenMixin.findWidgetNodesByWidgetId(widgetId: string): Array<WidgetNode>
+PROPERTY	ConstraintMixin.constraints: Constraints
+PROPERTY	DimensionAndPositionMixin.x: number
+PROPERTY	DimensionAndPositionMixin.y: number
+PROPERTY	DimensionAndPositionMixin.readonly width: number
+PROPERTY	DimensionAndPositionMixin.readonly height: number
+PROPERTY	DimensionAndPositionMixin.minWidth: number | null
+PROPERTY	DimensionAndPositionMixin.maxWidth: number | null
+PROPERTY	DimensionAndPositionMixin.minHeight: number | null
+PROPERTY	DimensionAndPositionMixin.maxHeight: number | null
+PROPERTY	DimensionAndPositionMixin.relativeTransform: Transform
+PROPERTY	DimensionAndPositionMixin.readonly absoluteTransform: Transform
+PROPERTY	DimensionAndPositionMixin.readonly absoluteBoundingBox: Rect | null
+PROPERTY	LayoutMixin.readonly absoluteRenderBounds: Rect | null
+PROPERTY	LayoutMixin.constrainProportions: boolean
+PROPERTY	LayoutMixin.rotation: number
+PROPERTY	LayoutMixin.layoutSizingHorizontal: 'FIXED' | 'HUG' | 'FILL'
+PROPERTY	LayoutMixin.layoutSizingVertical: 'FIXED' | 'HUG' | 'FILL'
+METHOD	LayoutMixin.resize(width: number, height: number): void
+METHOD	LayoutMixin.resizeWithoutConstraints(width: number, height: number): void
+METHOD	LayoutMixin.rescale(scale: number): void
+PROPERTY	AspectRatioLockMixin.readonly targetAspectRatio: Vector | null
+METHOD	AspectRatioLockMixin.lockAspectRatio(): void
+METHOD	AspectRatioLockMixin.unlockAspectRatio(): void
+PROPERTY	BlendMixin.isMask: boolean
+PROPERTY	BlendMixin.maskType: MaskType
+PROPERTY	BlendMixin.effects: ReadonlyArray<Effect>
+PROPERTY	BlendMixin.effectStyleId: string
+METHOD	BlendMixin.setEffectStyleIdAsync(styleId: string): Promise<void>
+PROPERTY	ContainerMixin.expanded: boolean
+PROPERTY	DeprecatedBackgroundMixin.backgrounds: ReadonlyArray<Paint>
+PROPERTY	DeprecatedBackgroundMixin.backgroundStyleId: string
+PROPERTY	AutoLayoutMixin.layoutMode: 'NONE' | 'HORIZONTAL' | 'VERTICAL' | 'GRID'
+PROPERTY	AutoLayoutMixin.paddingLeft: number
+PROPERTY	AutoLayoutMixin.paddingRight: number
+PROPERTY	AutoLayoutMixin.paddingTop: number
+PROPERTY	AutoLayoutMixin.paddingBottom: number
+PROPERTY	AutoLayoutMixin.horizontalPadding: number
+PROPERTY	AutoLayoutMixin.verticalPadding: number
+PROPERTY	AutoLayoutMixin.primaryAxisSizingMode: 'FIXED' | 'AUTO'
+PROPERTY	AutoLayoutMixin.counterAxisSizingMode: 'FIXED' | 'AUTO'
+PROPERTY	AutoLayoutMixin.strokesIncludedInLayout: boolean
+PROPERTY	AutoLayoutMixin.layoutWrap: 'NO_WRAP' | 'WRAP'
+PROPERTY	AutoLayoutMixin.primaryAxisAlignItems: 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN' | 'SPACE_EVENLY' | 'SPACE_AROUND'
+PROPERTY	AutoLayoutMixin.counterAxisAlignItems: 'MIN' | 'MAX' | 'CENTER' | 'BASELINE'
+PROPERTY	AutoLayoutMixin.counterAxisAlignContent: 'AUTO' | 'SPACE_BETWEEN'
+PROPERTY	AutoLayoutMixin.itemSpacing: number
+PROPERTY	AutoLayoutMixin.counterAxisSpacing: number | null
+PROPERTY	AutoLayoutMixin.itemReverseZIndex: boolean
+PROPERTY	GridTrackSize.value?: number
+PROPERTY	GridTrackSize.type: 'FLEX' | 'FIXED' | 'HUG'
+PROPERTY	GridTrackReorderOptions.fromIndices: ReadonlyArray<number>
+PROPERTY	GridTrackReorderOptions.insertionIndex: number
+PROPERTY	GridTrackReorderEntry.from: number
+PROPERTY	GridTrackReorderEntry.to: number
+PROPERTY	GridLayoutMixin.gridRowCount: number
+PROPERTY	GridLayoutMixin.gridColumnCount: number
+PROPERTY	GridLayoutMixin.gridRowGap: number
+PROPERTY	GridLayoutMixin.gridColumnGap: number
+PROPERTY	GridLayoutMixin.gridRowSizes: Array<GridTrackSize>
+PROPERTY	GridLayoutMixin.gridColumnSizes: Array<GridTrackSize>
+METHOD	GridLayoutMixin.appendChildAt(node: SceneNode, rowIndex: number, columnIndex: number): void
+PROPERTY	GridLayoutMixin.gridAutoTracks: 'NONE' | 'ROWS'
+PROPERTY	GridLayoutMixin.gridItemsPositioning: 'MANUAL' | 'ROW_AUTO_FLOW'
+METHOD	GridLayoutMixin.reorderRows(options: GridTrackReorderOptions): ReadonlyArray<GridTrackReorderEntry>
+METHOD	GridLayoutMixin.reorderColumns(options: GridTrackReorderOptions): ReadonlyArray<GridTrackReorderEntry>
+PROPERTY	AutoLayoutChildrenMixin.layoutAlign: 'MIN' | 'CENTER' | 'MAX' | 'STRETCH' | 'INHERIT'
+PROPERTY	AutoLayoutChildrenMixin.layoutGrow: number
+PROPERTY	AutoLayoutChildrenMixin.layoutPositioning: 'AUTO' | 'ABSOLUTE'
+METHOD	GridChildrenMixin.setGridChildPosition(rowIndex: number, columnIndex: number): void
+PROPERTY	GridChildrenMixin.readonly gridRowAnchorIndex: number
+PROPERTY	GridChildrenMixin.readonly gridColumnAnchorIndex: number
+PROPERTY	GridChildrenMixin.gridRowSpan: number
+PROPERTY	GridChildrenMixin.gridColumnSpan: number
+PROPERTY	GridChildrenMixin.gridChildHorizontalAlign: 'MIN' | 'CENTER' | 'MAX' | 'AUTO'
+PROPERTY	GridChildrenMixin.gridChildVerticalAlign: 'MIN' | 'CENTER' | 'MAX' | 'AUTO'
+PROPERTY	MinimalStrokesMixin.strokes: ReadonlyArray<Paint>
+PROPERTY	MinimalStrokesMixin.strokeStyleId: string
+METHOD	MinimalStrokesMixin.setStrokeStyleIdAsync(styleId: string): Promise<void>
+PROPERTY	MinimalStrokesMixin.strokeWeight: number | PluginAPI['mixed']
+PROPERTY	MinimalStrokesMixin.strokeJoin: StrokeJoin | PluginAPI['mixed']
+PROPERTY	MinimalStrokesMixin.strokeAlign: 'CENTER' | 'INSIDE' | 'OUTSIDE'
+PROPERTY	MinimalStrokesMixin.dashPattern: ReadonlyArray<number>
+PROPERTY	MinimalStrokesMixin.readonly strokeGeometry: VectorPaths
+METHOD	MinimalStrokesMixin.setStrokesAsync(strokes: ReadonlyArray<Paint>): Promise<void>
+PROPERTY	IndividualStrokesMixin.strokeTopWeight: number
+PROPERTY	IndividualStrokesMixin.strokeBottomWeight: number
+PROPERTY	IndividualStrokesMixin.strokeLeftWeight: number
+PROPERTY	IndividualStrokesMixin.strokeRightWeight: number
+PROPERTY	MinimalFillsMixin.fills: ReadonlyArray<Paint> | PluginAPI['mixed']
+PROPERTY	MinimalFillsMixin.fillStyleId: string | PluginAPI['mixed']
+METHOD	MinimalFillsMixin.setFillStyleIdAsync(styleId: string): Promise<void>
+METHOD	MinimalFillsMixin.setFillsAsync(paints: ReadonlyArray<Paint>): Promise<void>
+PROPERTY	VariableWidthPoint.position: number
+PROPERTY	VariableWidthPoint.width: number
+PROPERTY	PresetVariableWidthStrokeProperties.widthProfile: 'UNIFORM' | 'WEDGE' | 'TAPER' | 'QUARTER_TAPER' | 'EYE' | 'MIRRORED_TAPER'
+PROPERTY	CustomVariableWidthStrokeProperties.widthProfile: 'CUSTOM'
+PROPERTY	CustomVariableWidthStrokeProperties.variableWidthPoints: ReadonlyArray<VariableWidthPoint>
+PROPERTY	ScatterBrushProperties.type: 'BRUSH'
+PROPERTY	ScatterBrushProperties.brushType: 'SCATTER'
+PROPERTY	ScatterBrushProperties.brushName: | 'BUBBLEGUM' | 'WITCH_HOUSE' | 'SHOEGAZE' | 'HONKY_TONK' | 'SCREAMO' | 'DRONE' | 'DOO_WOP' | 'SPOKEN_WORD' | 'VAPORWAVE' | 'OI' | 'CUSTOM'
+PROPERTY	ScatterBrushProperties.gap: number
+PROPERTY	ScatterBrushProperties.wiggle: number
+PROPERTY	ScatterBrushProperties.sizeJitter: number
+PROPERTY	ScatterBrushProperties.angularJitter: number
+PROPERTY	ScatterBrushProperties.rotation: number
+PROPERTY	StretchBrushProperties.type: 'BRUSH'
+PROPERTY	StretchBrushProperties.brushType: 'STRETCH'
+PROPERTY	StretchBrushProperties.brushName: | 'HEIST' | 'BLOCKBUSTER' | 'GRINDHOUSE' | 'BIOPIC' | 'SPAGHETTI_WESTERN' | 'SLASHER' | 'HARDBOILED' | 'VERITE' | 'EPIC' | 'SCREWBALL' | 'ROM_COM' | 'NOIR'
+PROPERTY	StretchBrushProperties.direction: 'FORWARD' | 'BACKWARD'
+PROPERTY	DynamicStrokeProperties.type: 'DYNAMIC'
+PROPERTY	DynamicStrokeProperties.frequency: number
+PROPERTY	DynamicStrokeProperties.wiggle: number
+PROPERTY	DynamicStrokeProperties.smoothen: number
+PROPERTY	GeometryMixin.strokeCap: StrokeCap | PluginAPI['mixed']
+PROPERTY	GeometryMixin.strokeMiterLimit: number
+METHOD	GeometryMixin.outlineStroke(): VectorNode | null
+PROPERTY	GeometryMixin.readonly fillGeometry: VectorPaths
+PROPERTY	ComplexStrokesMixin.variableWidthStrokeProperties: VariableWidthStrokeProperties | null
+PROPERTY	ComplexStrokesMixin.complexStrokeProperties: ComplexStrokeProperties
+PROPERTY	CornerMixin.cornerRadius: number | PluginAPI['mixed']
+PROPERTY	CornerMixin.cornerSmoothing: number
+PROPERTY	RectangleCornerMixin.topLeftRadius: number
+PROPERTY	RectangleCornerMixin.topRightRadius: number
+PROPERTY	RectangleCornerMixin.bottomLeftRadius: number
+PROPERTY	RectangleCornerMixin.bottomRightRadius: number
+PROPERTY	ExportMixin.exportSettings: ReadonlyArray<ExportSettings>
+METHOD	ExportMixin.exportAsync(settings?: ExportSettings): Promise<Uint8Array>
+METHOD	ExportMixin.exportAsync(settings: ExportSettingsSVGString): Promise<string>
+METHOD	ExportMixin.exportAsync(settings: ExportSettingsREST): Promise<Object>
+METHOD	ExportMixin.exportAsync(settings: ExportSettingsMP4 | ExportSettingsGIF | ExportSettingsWEBM): Promise<Uint8Array>
+PROPERTY	FramePrototypingMixin.overflowDirection: OverflowDirection
+PROPERTY	FramePrototypingMixin.numberOfFixedChildren: number
+PROPERTY	FramePrototypingMixin.readonly overlayPositionType: OverlayPositionType
+PROPERTY	FramePrototypingMixin.readonly overlayBackground: OverlayBackground
+PROPERTY	FramePrototypingMixin.readonly overlayBackgroundInteraction: OverlayBackgroundInteraction
+PROPERTY	VectorLikeMixin.vectorNetwork: VectorNetwork
+METHOD	VectorLikeMixin.setVectorNetworkAsync(vectorNetwork: VectorNetwork): Promise<void>
+PROPERTY	VectorLikeMixin.vectorPaths: VectorPaths
+PROPERTY	VectorLikeMixin.handleMirroring: HandleMirroring | PluginAPI['mixed']
+PROPERTY	ReactionMixin.reactions: ReadonlyArray<Reaction>
+METHOD	ReactionMixin.setReactionsAsync(reactions: Array<Reaction>): Promise<void>
+PROPERTY	DocumentationLink.readonly uri: string
+PROPERTY	PublishableMixin.description: string
+PROPERTY	PublishableMixin.descriptionMarkdown: string
+PROPERTY	PublishableMixin.documentationLinks: ReadonlyArray<DocumentationLink>
+PROPERTY	PublishableMixin.readonly remote: boolean
+PROPERTY	PublishableMixin.readonly key: string
+METHOD	PublishableMixin.getPublishStatusAsync(): Promise<PublishStatus>
+PROPERTY	BaseFrameMixin.readonly detachedInfo: DetachedInfo | null
+PROPERTY	BaseFrameMixin.layoutGrids: ReadonlyArray<LayoutGrid>
+PROPERTY	BaseFrameMixin.gridStyleId: string
+METHOD	BaseFrameMixin.setGridStyleIdAsync(styleId: string): Promise<void>
+PROPERTY	BaseFrameMixin.clipsContent: boolean
+PROPERTY	BaseFrameMixin.guides: ReadonlyArray<Guide>
+PROPERTY	BaseFrameMixin.inferredAutoLayout: InferredAutoLayoutResult | null
+PROPERTY	MinimalBlendMixin.opacity: number
+PROPERTY	MinimalBlendMixin.blendMode: BlendMode
+PROPERTY	Annotation.readonly label?: string
+PROPERTY	Annotation.readonly labelMarkdown?: string
+PROPERTY	Annotation.readonly properties?: ReadonlyArray<AnnotationProperty>
+PROPERTY	Annotation.readonly categoryId?: string
+PROPERTY	AnnotationProperty.readonly type: AnnotationPropertyType
+PROPERTY	AnnotationsMixin.annotations: ReadonlyArray<Annotation>
+PROPERTY	Measurement.id: string
+PROPERTY	Measurement.start: {
+PROPERTY	Measurement.end: {
+PROPERTY	Measurement.offset: MeasurementOffset
+PROPERTY	Measurement.freeText: string
+METHOD	MeasurementsMixin.getMeasurements(): Measurement[]
+METHOD	MeasurementsMixin.getMeasurementsForNode(node: SceneNode): Measurement[]
+METHOD	MeasurementsMixin.addMeasurement(start: { node: SceneNode side: MeasurementSide }, end: { node: SceneNode side: MeasurementSide }, options?: { /** * @default { type: 'INNER'; relative: 0 } */ offset?: MeasurementOffset freeText?: string
+METHOD	MeasurementsMixin.editMeasurement(id: string, newValue: { offset?: MeasurementOffset freeText?: string }): Measurement
+METHOD	MeasurementsMixin.deleteMeasurement(id: string): void
+PROPERTY	VariantMixin.readonly variantProperties: {
+PROPERTY	ComponentPropertiesMixin.readonly componentPropertyDefinitions: ComponentPropertyDefinitions
+METHOD	ComponentPropertiesMixin.addComponentProperty(propertyName: string, type: ComponentPropertyType, defaultValue: string | boolean | VariableAlias, options?: ComponentPropertyOptions): string
+METHOD	ComponentPropertiesMixin.editComponentProperty(propertyName: string, newValue: { name?: string defaultValue?: string | boolean | VariableAlias preferredValues?: InstanceSwapPreferredValue[] description?: string slotSettings?: SlotSettings }): s…
+METHOD	ComponentPropertiesMixin.deleteComponentProperty(propertyName: string): void
+PROPERTY	BaseNonResizableTextMixin.readonly hasMissingFont: boolean
+PROPERTY	BaseNonResizableTextMixin.fontSize: number | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.fontName: FontName | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.readonly fontWeight: number | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.textCase: TextCase | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.readonly openTypeFeatures: | {
+PROPERTY	BaseNonResizableTextMixin.letterSpacing: LetterSpacing | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.hyperlink: HyperlinkTarget | null | PluginAPI['mixed']
+PROPERTY	BaseNonResizableTextMixin.characters: string
+METHOD	BaseNonResizableTextMixin.insertCharacters(start: number, characters: string, useStyle?: 'BEFORE' | 'AFTER'): void
+METHOD	BaseNonResizableTextMixin.deleteCharacters(start: number, end: number): void
+METHOD	BaseNonResizableTextMixin.getRangeFontSize(start: number, end: number): number | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeFontSize(start: number, end: number, value: number): void
+METHOD	BaseNonResizableTextMixin.getRangeFontName(start: number, end: number): FontName | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeFontName(start: number, end: number, value: FontNameInput): void
+METHOD	BaseNonResizableTextMixin.getRangeFontWeight(start: number, end: number): number | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.getRangeAllFontNames(start: number, end: number): FontName[]
+METHOD	BaseNonResizableTextMixin.getRangeTextCase(start: number, end: number): TextCase | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeTextCase(start: number, end: number, value: TextCase): void
+METHOD	BaseNonResizableTextMixin.getRangeOpenTypeFeatures(start: number, end: number):
+METHOD	BaseNonResizableTextMixin.getRangeLetterSpacing(start: number, end: number): LetterSpacing | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeLetterSpacing(start: number, end: number, value: LetterSpacing): void
+METHOD	BaseNonResizableTextMixin.getRangeHyperlink(start: number, end: number): HyperlinkTarget | null | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeHyperlink(start: number, end: number, value: HyperlinkTarget | null): void
+METHOD	BaseNonResizableTextMixin.getRangeFills(start: number, end: number): Paint[] | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeFills(start: number, end: number, value: Paint[]): void
+METHOD	BaseNonResizableTextMixin.getRangeTextStyleId(start: number, end: number): string | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeTextStyleIdAsync(start: number, end: number, styleId: string): Promise<void>
+METHOD	BaseNonResizableTextMixin.setRangeTextStyleId(start: number, end: number, value: string): void
+METHOD	BaseNonResizableTextMixin.getRangeFillStyleId(start: number, end: number): string | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeFillStyleIdAsync(start: number, end: number, styleId: string): Promise<void>
+METHOD	BaseNonResizableTextMixin.setRangeFillStyleId(start: number, end: number, value: string): void
+METHOD	BaseNonResizableTextMixin.getRangeBoundVariable(start: number, end: number, field: VariableBindableTextField): VariableAlias | null | PluginAPI['mixed']
+METHOD	BaseNonResizableTextMixin.setRangeBoundVariable(start: number, end: number, field: VariableBindableTextField, variable: Variable | null): void
+METHOD	BaseNonResizableTextMixin.getStyledTextSegments<
+PROPERTY	NonResizableTextMixin.paragraphIndent: number | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.paragraphSpacing: number | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.textWrapStyle: TextWrapStyle | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.listSpacing: number | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.hangingPunctuation: boolean
+PROPERTY	NonResizableTextMixin.hangingList: boolean
+PROPERTY	NonResizableTextMixin.textDecoration: TextDecoration | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.textDecorationStyle: TextDecorationStyle | PluginAPI['mixed'] | null
+PROPERTY	NonResizableTextMixin.textDecorationOffset: TextDecorationOffset | PluginAPI['mixed'] | null
+PROPERTY	NonResizableTextMixin.textDecorationThickness: TextDecorationThickness | PluginAPI['mixed'] | null
+PROPERTY	NonResizableTextMixin.textDecorationColor: TextDecorationColor | PluginAPI['mixed'] | null
+PROPERTY	NonResizableTextMixin.textDecorationSkipInk: boolean | PluginAPI['mixed'] | null
+PROPERTY	NonResizableTextMixin.lineHeight: LineHeight | PluginAPI['mixed']
+PROPERTY	NonResizableTextMixin.leadingTrim: LeadingTrim | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.getRangeTextDecoration(start: number, end: number): TextDecoration | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeTextDecoration(start: number, end: number, value: TextDecoration): void
+METHOD	NonResizableTextMixin.getRangeTextDecorationStyle(start: number, end: number): TextDecorationStyle | PluginAPI['mixed'] | null
+METHOD	NonResizableTextMixin.setRangeTextDecorationStyle(start: number, end: number, value: TextDecorationStyle): void
+METHOD	NonResizableTextMixin.getRangeTextDecorationOffset(start: number, end: number): TextDecorationOffset | PluginAPI['mixed'] | null
+METHOD	NonResizableTextMixin.setRangeTextDecorationOffset(start: number, end: number, value: TextDecorationOffset): void
+METHOD	NonResizableTextMixin.getRangeTextDecorationThickness(start: number, end: number): TextDecorationThickness | PluginAPI['mixed'] | null
+METHOD	NonResizableTextMixin.setRangeTextDecorationThickness(start: number, end: number, value: TextDecorationThickness): void
+METHOD	NonResizableTextMixin.getRangeTextDecorationColor(start: number, end: number): TextDecorationColor | PluginAPI['mixed'] | null
+METHOD	NonResizableTextMixin.setRangeTextDecorationColor(start: number, end: number, value: TextDecorationColor): void
+METHOD	NonResizableTextMixin.getRangeTextDecorationSkipInk(start: number, end: number): boolean | PluginAPI['mixed'] | null
+METHOD	NonResizableTextMixin.setRangeTextDecorationSkipInk(start: number, end: number, value: boolean): void
+METHOD	NonResizableTextMixin.getRangeLineHeight(start: number, end: number): LineHeight | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeLineHeight(start: number, end: number, value: LineHeight): void
+METHOD	NonResizableTextMixin.getRangeListOptions(start: number, end: number): TextListOptions | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeListOptions(start: number, end: number, value: TextListOptions): void
+METHOD	NonResizableTextMixin.getRangeListSpacing(start: number, end: number): number | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeListSpacing(start: number, end: number, value: number): void
+METHOD	NonResizableTextMixin.getRangeIndentation(start: number, end: number): number | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeIndentation(start: number, end: number, value: number): void
+METHOD	NonResizableTextMixin.getRangeParagraphIndent(start: number, end: number): number | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeParagraphIndent(start: number, end: number, value: number): void
+METHOD	NonResizableTextMixin.getRangeParagraphSpacing(start: number, end: number): number | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeParagraphSpacing(start: number, end: number, value: number): void
+METHOD	NonResizableTextMixin.getRangeTextWrapStyle(start: number, end: number): TextWrapStyle | PluginAPI['mixed']
+METHOD	NonResizableTextMixin.setRangeTextWrapStyle(start: number, end: number, value: TextWrapStyle): void
+PROPERTY	DocumentNode.readonly type: 'DOCUMENT'
+PROPERTY	DocumentNode.readonly children: ReadonlyArray<PageNode>
+PROPERTY	DocumentNode.readonly documentColorProfile: 'LEGACY' | 'SRGB' | 'DISPLAY_P3'
+METHOD	DocumentNode.appendChild(child: PageNode): void
+METHOD	DocumentNode.insertChild(index: number, child: PageNode): void
+METHOD	DocumentNode.findChildren(callback?: (node: PageNode) => boolean): Array<PageNode>
+METHOD	DocumentNode.findChild(callback: (node: PageNode) => boolean): PageNode | null
+METHOD	DocumentNode.findAll(callback?: (node: PageNode | SceneNode) => boolean): Array<PageNode | SceneNode>
+METHOD	DocumentNode.findOne(callback: (node: PageNode | SceneNode) => boolean): PageNode | SceneNode | null
+METHOD	DocumentNode.findAllWithCriteria<T extends NodeType[]>(criteria: FindAllCriteria<T>): Array<
+METHOD	DocumentNode.findWidgetNodesByWidgetId(widgetId: string): Array<WidgetNode>
+PROPERTY	ExplicitVariableModesMixin.explicitVariableModes: {
+METHOD	ExplicitVariableModesMixin.clearExplicitVariableModeForCollection(collectionId: string): void
+METHOD	ExplicitVariableModesMixin.clearExplicitVariableModeForCollection(collection: VariableCollection): void
+METHOD	ExplicitVariableModesMixin.setExplicitVariableModeForCollection(collectionId: string, modeId: string): void
+METHOD	ExplicitVariableModesMixin.setExplicitVariableModeForCollection(collection: VariableCollection, modeId: string): void
+PROPERTY	PageNode.readonly type: 'PAGE'
+METHOD	PageNode.clone(): PageNode
+PROPERTY	PageNode.guides: ReadonlyArray<Guide>
+PROPERTY	PageNode.selection: ReadonlyArray<SceneNode>
+PROPERTY	PageNode.selectedTextRange: {
+PROPERTY	PageNode.flowStartingPoints: ReadonlyArray<{
+PROPERTY	PageNode.backgrounds: ReadonlyArray<Paint>
+PROPERTY	PageNode.prototypeBackgrounds: ReadonlyArray<Paint>
+PROPERTY	PageNode.readonly prototypeStartNode: FrameNode | GroupNode | ComponentNode | InstanceNode | null
+PROPERTY	PageNode.readonly isPageDivider: boolean
+METHOD	PageNode.loadAsync(): Promise<void>
+METHOD	PageNode.on(type: 'nodechange', callback: (event: NodeChangeEvent) => void): void
+METHOD	PageNode.once(type: 'nodechange', callback: (event: NodeChangeEvent) => void): void
+METHOD	PageNode.off(type: 'nodechange', callback: (event: NodeChangeEvent) => void): void
+PROPERTY	PageNode.focusedSlide?: SlideNode | null
+PROPERTY	PageNode.focusedNode: SceneNode | null
+PROPERTY	FrameNode.readonly type: 'FRAME'
+METHOD	FrameNode.clone(): FrameNode
+PROPERTY	GroupNode.readonly type: 'GROUP'
+METHOD	GroupNode.clone(): GroupNode
+PROPERTY	TransformGroupNode.readonly type: 'TRANSFORM_GROUP'
+METHOD	TransformGroupNode.clone(): TransformGroupNode
+PROPERTY	TransformGroupNode.transformModifiers: TransformModifier[]
+PROPERTY	SliceNode.readonly type: 'SLICE'
+METHOD	SliceNode.clone(): SliceNode
+PROPERTY	RectangleNode.readonly type: 'RECTANGLE'
+METHOD	RectangleNode.clone(): RectangleNode
+PROPERTY	LineNode.readonly type: 'LINE'
+METHOD	LineNode.clone(): LineNode
+PROPERTY	EllipseNode.readonly type: 'ELLIPSE'
+METHOD	EllipseNode.clone(): EllipseNode
+PROPERTY	EllipseNode.arcData: ArcData
+PROPERTY	PolygonNode.readonly type: 'POLYGON'
+METHOD	PolygonNode.clone(): PolygonNode
+PROPERTY	PolygonNode.pointCount: number
+PROPERTY	StarNode.readonly type: 'STAR'
+METHOD	StarNode.clone(): StarNode
+PROPERTY	StarNode.pointCount: number
+PROPERTY	StarNode.innerRadius: number
+PROPERTY	VectorNode.readonly type: 'VECTOR'
+METHOD	VectorNode.clone(): VectorNode
+PROPERTY	TextNode.readonly type: 'TEXT'
+METHOD	TextNode.clone(): TextNode
+PROPERTY	TextNode.textAlignHorizontal: 'LEFT' | 'CENTER' | 'RIGHT' | 'JUSTIFIED'
+PROPERTY	TextNode.textAlignVertical: 'TOP' | 'CENTER' | 'BOTTOM'
+PROPERTY	TextNode.textAutoResize: 'NONE' | 'WIDTH_AND_HEIGHT' | 'HEIGHT' | 'TRUNCATE'
+PROPERTY	TextNode.textTruncation: 'DISABLED' | 'ENDING'
+PROPERTY	TextNode.maxLines: number | null
+PROPERTY	TextNode.autoRename: boolean
+PROPERTY	TextNode.textStyleId: string | PluginAPI['mixed']
+METHOD	TextNode.setTextStyleIdAsync(styleId: string): Promise<void>
+PROPERTY	TextPathNode.readonly type: 'TEXT_PATH'
+METHOD	TextPathNode.clone(): TextPathNode
+PROPERTY	TextPathNode.textAlignHorizontal: 'LEFT' | 'CENTER' | 'RIGHT' | 'JUSTIFIED'
+PROPERTY	TextPathNode.textAlignVertical: 'TOP' | 'CENTER' | 'BOTTOM'
+PROPERTY	TextPathNode.autoRename: boolean
+PROPERTY	TextPathNode.textStyleId: string | PluginAPI['mixed']
+METHOD	TextPathNode.setTextStyleIdAsync(styleId: string): Promise<void>
+PROPERTY	TextPathNode.readonly vectorPaths: VectorPaths
+PROPERTY	TextPathNode.readonly vectorNetwork: VectorNetwork
+PROPERTY	TextPathNode.readonly handleMirroring: HandleMirroring | PluginAPI['mixed']
+PROPERTY	TextPathNode.textPathStartData: TextPathStartData
+PROPERTY	ComponentSetNode.readonly type: 'COMPONENT_SET'
+METHOD	ComponentSetNode.clone(): ComponentSetNode
+PROPERTY	ComponentSetNode.readonly defaultVariant: ComponentNode
+PROPERTY	ComponentSetNode.readonly variantGroupProperties: {
+PROPERTY	ComponentNode.readonly type: 'COMPONENT'
+METHOD	ComponentNode.clone(): ComponentNode
+METHOD	ComponentNode.createInstance(): InstanceNode
+METHOD	ComponentNode.createSlot(): SlotNode
+METHOD	ComponentNode.getInstancesAsync(): Promise<InstanceNode[]>
+PROPERTY	ComponentNode.readonly instances: InstanceNode[]
+PROPERTY	InstanceNode.readonly type: 'INSTANCE'
+METHOD	InstanceNode.clone(): InstanceNode
+METHOD	InstanceNode.getMainComponentAsync(): Promise<ComponentNode | null>
+PROPERTY	InstanceNode.mainComponent: ComponentNode | null
+METHOD	InstanceNode.swapComponent(componentNode: ComponentNode): void
+METHOD	InstanceNode.setProperties(properties: { [propertyName: string]: string | boolean | VariableAlias }): void
+PROPERTY	InstanceNode.readonly componentProperties: ComponentProperties
+METHOD	InstanceNode.detachInstance(): FrameNode
+PROPERTY	InstanceNode.scaleFactor: number
+PROPERTY	InstanceNode.readonly exposedInstances: InstanceNode[]
+PROPERTY	InstanceNode.isExposedInstance: boolean
+PROPERTY	InstanceNode.readonly overrides: {
+METHOD	InstanceNode.resetOverrides(): void
+METHOD	InstanceNode.removeOverrides(): void
+PROPERTY	SlotNode.readonly type: 'SLOT'
+METHOD	SlotNode.clone(): FrameNode
+METHOD	SlotNode.resetSlot(): void
+PROPERTY	SlotNode.readonly limitViolations: Array<'BELOW_MIN' | 'ABOVE_MAX' | 'HAS_NON_PREFERRED'>
+PROPERTY	BooleanOperationNode.readonly type: 'BOOLEAN_OPERATION'
+METHOD	BooleanOperationNode.clone(): BooleanOperationNode
+PROPERTY	BooleanOperationNode.booleanOperation: 'UNION' | 'INTERSECT' | 'SUBTRACT' | 'EXCLUDE'
+PROPERTY	StickyNode.readonly type: 'STICKY'
+PROPERTY	StickyNode.readonly text: TextSublayerNode
+PROPERTY	StickyNode.authorVisible: boolean
+PROPERTY	StickyNode.authorName: string
+PROPERTY	StickyNode.isWideWidth: boolean
+METHOD	StickyNode.clone(): StickyNode
+PROPERTY	StampNode.readonly type: 'STAMP'
+METHOD	StampNode.clone(): StampNode
+METHOD	StampNode.getAuthorAsync(): Promise<BaseUser | null>
+PROPERTY	TableNode.readonly type: 'TABLE'
+METHOD	TableNode.clone(): TableNode
+PROPERTY	TableNode.readonly numRows: number
+PROPERTY	TableNode.readonly numColumns: number
+METHOD	TableNode.cellAt(rowIndex: number, columnIndex: number): TableCellNode
+METHOD	TableNode.insertRow(rowIndex: number): void
+METHOD	TableNode.insertColumn(columnIndex: number): void
+METHOD	TableNode.removeRow(rowIndex: number): void
+METHOD	TableNode.removeColumn(columnIndex: number): void
+METHOD	TableNode.moveRow(fromIndex: number, toIndex: number): void
+METHOD	TableNode.moveColumn(fromIndex: number, toIndex: number): void
+METHOD	TableNode.resizeRow(rowIndex: number, height: number): void
+METHOD	TableNode.resizeColumn(columnIndex: number, width: number): void
+PROPERTY	TableCellNode.readonly type: 'TABLE_CELL'
+PROPERTY	TableCellNode.readonly text: TextSublayerNode
+PROPERTY	TableCellNode.readonly rowIndex: number
+PROPERTY	TableCellNode.readonly columnIndex: number
+PROPERTY	TableCellNode.readonly toString: string
+PROPERTY	TableCellNode.readonly parent: TableNode
+PROPERTY	TableCellNode.readonly height: number
+PROPERTY	TableCellNode.readonly width: number
+PROPERTY	HighlightNode.readonly type: 'HIGHLIGHT'
+METHOD	HighlightNode.clone(): HighlightNode
+PROPERTY	WashiTapeNode.readonly type: 'WASHI_TAPE'
+METHOD	WashiTapeNode.clone(): WashiTapeNode
+PROPERTY	ShapeWithTextNode.readonly type: 'SHAPE_WITH_TEXT'
+PROPERTY	ShapeWithTextNode.shapeType: | 'SQUARE' | 'ELLIPSE' | 'ROUNDED_RECTANGLE' | 'DIAMOND' | 'TRIANGLE_UP' | 'TRIANGLE_DOWN' | 'PARALLELOGRAM_RIGHT' | 'PARALLELOGRAM_LEFT' | 'ENG_DATABASE' | 'ENG_QUEUE' | 'ENG_FILE' | 'ENG_FOLDER'
+PROPERTY	ShapeWithTextNode.readonly text: TextSublayerNode
+PROPERTY	ShapeWithTextNode.readonly cornerRadius?: number
+PROPERTY	ShapeWithTextNode.rotation: number
+METHOD	ShapeWithTextNode.resize(width: number, height: number): void
+METHOD	ShapeWithTextNode.rescale(scale: number): void
+METHOD	ShapeWithTextNode.clone(): ShapeWithTextNode
+PROPERTY	CodeBlockNode.readonly type: 'CODE_BLOCK'
+PROPERTY	CodeBlockNode.code: string
+PROPERTY	CodeBlockNode.codeLanguage: | 'TYPESCRIPT' | 'CPP' | 'RUBY' | 'CSS' | 'JAVASCRIPT' | 'HTML' | 'JSON' | 'GRAPHQL' | 'PYTHON' | 'GO' | 'SQL' | 'SWIFT'
+METHOD	CodeBlockNode.clone(): CodeBlockNode
+PROPERTY	LabelSublayerNode.fills: Paint[] | PluginAPI['mixed']
+PROPERTY	ConnectorNode.readonly type: 'CONNECTOR'
+PROPERTY	ConnectorNode.readonly text: TextSublayerNode
+PROPERTY	ConnectorNode.readonly textBackground: LabelSublayerNode
+PROPERTY	ConnectorNode.readonly cornerRadius?: number
+PROPERTY	ConnectorNode.connectorLineType: 'ELBOWED' | 'STRAIGHT' | 'CURVED'
+PROPERTY	ConnectorNode.connectorStart: ConnectorEndpoint
+PROPERTY	ConnectorNode.connectorEnd: ConnectorEndpoint
+PROPERTY	ConnectorNode.connectorStartStrokeCap: ConnectorStrokeCap
+PROPERTY	ConnectorNode.connectorEndStrokeCap: ConnectorStrokeCap
+PROPERTY	ConnectorNode.rotation: number
+METHOD	ConnectorNode.clone(): ConnectorNode
+PROPERTY	VariableAlias.type: 'VARIABLE_ALIAS'
+PROPERTY	VariableAlias.id: string
+PROPERTY	Variable.readonly id: string
+PROPERTY	Variable.name: string
+PROPERTY	Variable.description: string
+PROPERTY	Variable.hiddenFromPublishing: boolean
+METHOD	Variable.getPublishStatusAsync(): Promise<PublishStatus>
+PROPERTY	Variable.readonly remote: boolean
+PROPERTY	Variable.readonly variableCollectionId: string
+PROPERTY	Variable.readonly key: string
+PROPERTY	Variable.readonly resolvedType: VariableResolvedDataType
+METHOD	Variable.resolveForConsumer(consumer: SceneNode): {
+METHOD	Variable.setValueForMode(modeId: string, newValue: VariableValue): void
+PROPERTY	Variable.readonly valuesByMode: {
+METHOD	Variable.remove(): void
+PROPERTY	Variable.scopes: Array<VariableScope>
+PROPERTY	Variable.readonly codeSyntax: {
+METHOD	Variable.setVariableCodeSyntax(platform: CodeSyntaxPlatform, value: string): void
+METHOD	Variable.removeVariableCodeSyntax(platform: CodeSyntaxPlatform): void
+METHOD	Variable.valuesByModeForCollectionAsync(collection: VariableCollection): Promise<{
+METHOD	Variable.removeOverrideForMode(extendedModeId: string): void
+PROPERTY	VariableCollection.readonly id: string
+PROPERTY	VariableCollection.name: string
+PROPERTY	VariableCollection.hiddenFromPublishing: boolean
+METHOD	VariableCollection.getPublishStatusAsync(): Promise<PublishStatus>
+PROPERTY	VariableCollection.readonly remote: boolean
+PROPERTY	VariableCollection.readonly isExtension: boolean
+PROPERTY	VariableCollection.readonly modes: Array<{
+PROPERTY	VariableCollection.readonly variableIds: string[]
+PROPERTY	VariableCollection.readonly defaultModeId: string
+PROPERTY	VariableCollection.readonly key: string
+METHOD	VariableCollection.extend(name: string): ExtendedVariableCollection
+METHOD	VariableCollection.remove(): void
+METHOD	VariableCollection.removeMode(modeId: string): void
+METHOD	VariableCollection.addMode(name: string): string
+METHOD	VariableCollection.renameMode(modeId: string, newName: string): void
+PROPERTY	ExtendedVariableCollection.readonly isExtension: true
+PROPERTY	ExtendedVariableCollection.readonly parentVariableCollectionId: string
+PROPERTY	ExtendedVariableCollection.readonly rootVariableCollectionId: string
+PROPERTY	ExtendedVariableCollection.readonly variableIds: string[]
+PROPERTY	ExtendedVariableCollection.readonly variableOverrides: {
+METHOD	ExtendedVariableCollection.removeOverridesForVariable(variableToClear: Variable): void
+PROPERTY	ExtendedVariableCollection.readonly modes: Array<{
+METHOD	ExtendedVariableCollection.removeMode(modeId: string): void
+PROPERTY	AnnotationCategory.readonly id: string
+PROPERTY	AnnotationCategory.readonly label: string
+PROPERTY	AnnotationCategory.readonly color: AnnotationCategoryColor
+PROPERTY	AnnotationCategory.readonly isPreset: boolean
+METHOD	AnnotationCategory.remove(): void
+METHOD	AnnotationCategory.setColor(color: AnnotationCategoryColor): void
+METHOD	AnnotationCategory.setLabel(label: string): void
+PROPERTY	WidgetNode.readonly type: 'WIDGET'
+PROPERTY	WidgetNode.readonly widgetId: string
+PROPERTY	WidgetNode.readonly widgetSyncedState: {
+METHOD	WidgetNode.clone(): WidgetNode
+METHOD	WidgetNode.cloneWidget(syncedStateOverrides: { [name: string]: any }, syncedMapOverrides?: { [mapName: string]: { [key: string]: any } }): WidgetNode
+METHOD	WidgetNode.setWidgetSyncedState(syncedState: { [name: string]: any }, syncedMap?: { [mapName: string]: { [key: string]: any } }): void
+PROPERTY	EmbedData.srcUrl: string
+PROPERTY	EmbedData.canonicalUrl: string | null
+PROPERTY	EmbedData.title: string | null
+PROPERTY	EmbedData.description: string | null
+PROPERTY	EmbedData.provider: string | null
+PROPERTY	EmbedNode.readonly type: 'EMBED'
+PROPERTY	EmbedNode.readonly embedData: EmbedData
+METHOD	EmbedNode.clone(): EmbedNode
+PROPERTY	LinkUnfurlData.url: string
+PROPERTY	LinkUnfurlData.title: string | null
+PROPERTY	LinkUnfurlData.description: string | null
+PROPERTY	LinkUnfurlData.provider: string | null
+PROPERTY	LinkUnfurlNode.readonly type: 'LINK_UNFURL'
+PROPERTY	LinkUnfurlNode.readonly linkUnfurlData: LinkUnfurlData
+METHOD	LinkUnfurlNode.clone(): LinkUnfurlNode
+PROPERTY	MediaData.hash: string
+PROPERTY	MediaNode.readonly type: 'MEDIA'
+PROPERTY	MediaNode.readonly mediaData: MediaData
+METHOD	MediaNode.resize(width: number, height: number): void
+METHOD	MediaNode.resizeWithoutConstraints(width: number, height: number): void
+METHOD	MediaNode.clone(): MediaNode
+PROPERTY	SectionNode.readonly type: 'SECTION'
+PROPERTY	SectionNode.sectionContentsHidden: boolean
+METHOD	SectionNode.clone(): SectionNode
+METHOD	SectionNode.resizeWithoutConstraints(width: number, height: number): void
+METHOD	SectionNode.resize(width: number, height: number): void
+PROPERTY	SlideNode.readonly type: 'SLIDE'
+METHOD	SlideNode.clone(): SlideNode
+METHOD	SlideNode.getSlideTransition(): SlideTransition
+METHOD	SlideNode.setSlideTransition(transition: SlideTransition): void
+PROPERTY	SlideNode.isSkippedSlide: boolean
+PROPERTY	SlideRowNode.readonly type: 'SLIDE_ROW'
+METHOD	SlideRowNode.clone(): SlideRowNode
+PROPERTY	SlideGridNode.readonly type: 'SLIDE_GRID'
+METHOD	SlideGridNode.clone(): SlideGridNode
+PROPERTY	InteractiveSlideElementNode.readonly type: 'INTERACTIVE_SLIDE_ELEMENT'
+PROPERTY	InteractiveSlideElementNode.readonly interactiveSlideElementType: 'POLL' | 'EMBED' | 'FACEPILE' | 'ALIGNMENT' | 'YOUTUBE'
+METHOD	InteractiveSlideElementNode.clone(): InteractiveSlideElementNode
+PROPERTY	SlideTransition.readonly style: | 'NONE' | 'DISSOLVE' | 'SLIDE_FROM_LEFT' | 'SLIDE_FROM_RIGHT' | 'SLIDE_FROM_BOTTOM' | 'SLIDE_FROM_TOP' | 'PUSH_FROM_LEFT' | 'PUSH_FROM_RIGHT' | 'PUSH_FROM_BOTTOM' | 'PUSH_FROM_TOP' | 'MOVE_FROM_LEFT' | …
+PROPERTY	SlideTransition.readonly duration: number
+PROPERTY	SlideTransition.readonly curve: 'EASE_IN' | 'EASE_OUT' | 'EASE_IN_AND_OUT' | 'LINEAR' | 'GENTLE' | 'QUICK' | 'BOUNCY' | 'SLOW'
+PROPERTY	SlideTransition.readonly timing: {
+PROPERTY	StyleConsumers.node: SceneNode
+PROPERTY	StyleConsumers.fields: InheritedStyleField[]
+PROPERTY	BaseStyleMixin.readonly id: string
+PROPERTY	BaseStyleMixin.readonly type: StyleType
+METHOD	BaseStyleMixin.getStyleConsumersAsync(): Promise<StyleConsumers[]>
+PROPERTY	BaseStyleMixin.readonly consumers: StyleConsumers[]
+PROPERTY	BaseStyleMixin.name: string
+METHOD	BaseStyleMixin.remove(): void
+PROPERTY	PaintStyle.type: 'PAINT'
+PROPERTY	PaintStyle.paints: ReadonlyArray<Paint>
+PROPERTY	PaintStyle.readonly boundVariables?: {
+PROPERTY	TextStyle.type: 'TEXT'
+PROPERTY	TextStyle.fontSize: number
+PROPERTY	TextStyle.textDecoration: TextDecoration
+PROPERTY	TextStyle.fontName: FontName
+PROPERTY	TextStyle.letterSpacing: LetterSpacing
+PROPERTY	TextStyle.lineHeight: LineHeight
+PROPERTY	TextStyle.leadingTrim: LeadingTrim
+PROPERTY	TextStyle.paragraphIndent: number
+PROPERTY	TextStyle.paragraphSpacing: number
+PROPERTY	TextStyle.textWrapStyle: TextWrapStyle
+PROPERTY	TextStyle.listSpacing: number
+PROPERTY	TextStyle.hangingPunctuation: boolean
+PROPERTY	TextStyle.hangingList: boolean
+PROPERTY	TextStyle.textCase: TextCase
+PROPERTY	TextStyle.boundVariables?: {
+METHOD	TextStyle.setBoundVariable(field: VariableBindableTextField, variable: Variable | null): void
+PROPERTY	EffectStyle.type: 'EFFECT'
+PROPERTY	EffectStyle.effects: ReadonlyArray<Effect>
+PROPERTY	EffectStyle.readonly boundVariables?: {
+PROPERTY	GridStyle.type: 'GRID'
+PROPERTY	GridStyle.layoutGrids: ReadonlyArray<LayoutGrid>
+PROPERTY	GridStyle.readonly boundVariables?: {
+PROPERTY	CustomAnimationStyle.type: 'CUSTOM_ANIMATION'
+PROPERTY	CustomAnimationStyle.readonly animationEntries: AnimationEntry[]
+METHOD	CustomAnimationStyle.addAnimationEntryAsync(styleId: string, props?: { readonly [key: string]: AnimationStylePropValue }): Promise<AnimationEntry>
+METHOD	CustomAnimationStyle.removeAnimationEntry(id: string): void
+PROPERTY	Image.readonly hash: string
+METHOD	Image.getBytesAsync(): Promise<Uint8Array>
+METHOD	Image.getSizeAsync(): Promise<{
+PROPERTY	Video.readonly hash: string
+PROPERTY	BaseUser.readonly id: string | null
+PROPERTY	BaseUser.readonly name: string
+PROPERTY	BaseUser.readonly photoUrl: string | null
+PROPERTY	User.readonly color: string
+PROPERTY	User.readonly sessionId: number
+PROPERTY	ActiveUser.readonly position: Vector | null
+PROPERTY	ActiveUser.readonly viewport: Rect
+PROPERTY	ActiveUser.readonly selection: string[]
+PROPERTY	FindAllCriteria.types?: T
+PROPERTY	FindAllCriteria.pluginData?: {
+PROPERTY	FindAllCriteria.sharedPluginData?: {
+PROPERTY	RepeatModifier.type: 'REPEAT'
+PROPERTY	RepeatModifier.count: number
+PROPERTY	RepeatModifier.unitType: 'RELATIVE' | 'PIXELS'
+PROPERTY	RepeatModifier.offset: number
+PROPERTY	LinearRepeatModifier.repeatType: 'LINEAR'
+PROPERTY	LinearRepeatModifier.axis: 'HORIZONTAL' | 'VERTICAL'
+PROPERTY	RadialRepeatModifier.repeatType: 'RADIAL'
+
+# ENUM / TYPE
+ENUM	ArgFreeEventType	selectionchange|currentpagechange|close|timerstart|timerstop|timerpause|timerresume|timeradjust|timerdone
+ENUM	BuzzAssetType	CUSTOM|TWITTER_POST|LINKEDIN_POST|INSTA_POST_SQUARE|INSTA_POST_PORTRAIT|INSTA_STORY|INSTA_AD|FACEBOOK_POST|FACEBOOK_COVER_PHOTO|FACEBOOK_EVENT_COVER|FACEBOOK_AD_PORTRAIT|FACEBOOK_AD_SQUARE|PINTEREST_AD_PIN|TWITTER_BANNER|LINKEDIN_POST_SQUARE|LINKEDIN_POST_PORTRAIT|LINKEDIN_POST_LANDSCAPE|LINKEDIN_PROFILE_BANNER|LINKEDIN_ARTICLE_BANNER|LINKEDIN_AD_LANDSCAPE|LINKEDIN_AD_SQUARE|LINKEDIN_AD_VERTICAL|YOUTUBE_THUMBNAIL|YOUTUBE_BANNER|YOUTUBE_AD|TWITCH_BANNER|GOOGLE_LEADERBOARD_AD|GOOGLE_LARGE_AD|GOOGLE_MED_AD|GOOGLE_MOBILE_BANNER_AD|GOOGLE_SKYSCRAPER_AD|CARD_HORIZONTAL|CARD_VERTICAL|PRINT_US_LETTER|POSTER|BANNER_STANDARD|BANNER_WIDE|BANNER_ULTRAWIDE|NAME_TAG_PORTRAIT|NAME_TAG_LANDSCAPE|INSTA_REEL_COVER|ZOOM_BACKGROUND
+TYPE	PaymentStatus
+ENUM	NotifyDequeueReason	timeout|dismiss|action_button_click
+TYPE	MessageEventHandler
+TYPE	CodegenEvent
+TYPE	CodegenPreferences
+TYPE	CodegenPreferencesEvent
+TYPE	CodegenResult
+TYPE	LinkPreviewEvent
+TYPE	PlainTextElement
+TYPE	LinkPreviewResult
+TYPE	AuthEvent
+TYPE	DevResourceOpenEvent
+TYPE	AuthResult
+TYPE	RunEvent
+TYPE	StyleChange
+TYPE	DocumentChange
+ENUM	NodeChangeProperty	pointCount|name|width|height|minWidth|maxWidth|minHeight|maxHeight|parent|pluginData|constraints|locked|visible|opacity|blendMode|layoutGrids|guides|characters|openTypeFeatures|styledTextSegments|vectorNetwork|effects|exportSettings|arcData|autoRename|fontName|innerRadius|fontSize|lineHeight|leadingTrim|paragraphIndent|paragraphSpacing|textWrapStyle|listSpacing|hangingPunctuation|hangingList|letterSpacing|textAlignHorizontal|textAlignVertical|textCase|textDecoration|textAutoResize|textTruncation|maxLines|fills|topLeftRadius|topRightRadius|bottomLeftRadius|bottomRightRadius|constrainProportions|strokes|strokeWeight|strokeAlign|strokeCap|strokeJoin|strokeMiterLimit|booleanOperation|overflowDirection|dashPattern
+TYPE	NodeChange
+ENUM	StyleChangeProperty	name|pluginData|type|description|remote|documentationLinks|fontSize|textDecoration|letterSpacing|lineHeight|leadingTrim|paragraphIndent|paragraphSpacing|textWrapStyle|listSpacing|hangingPunctuation|hangingList|textCase|paint|effects|layoutGrids
+TYPE	TextReviewEvent
+TYPE	TextReviewRange
+TYPE	Transform
+TYPE	ColorWithColorSpace
+ENUM	TextCase	ORIGINAL|UPPER|LOWER|TITLE|SMALL_CAPS|SMALL_CAPS_FORCED
+ENUM	TextDecoration	NONE|UNDERLINE|STRIKETHROUGH
+ENUM	TextDecorationStyle	SOLID|WAVY|DOTTED
+ENUM	FontStyle	REGULAR|ITALIC
+TYPE	TextDecorationOffset
+TYPE	TextDecorationThickness
+TYPE	TextDecorationColor
+ENUM	OpenTypeFeature	PCAP|C2PC|CASE|CPSP|TITL|UNIC|ZERO|SINF|ORDN|AFRC|DNOM|NUMR|LIGA|CLIG|DLIG|HLIG|RLIG|AALT|CALT|RCLT|SALT|RVRN|VERT|SWSH|CSWH|NALT|CCMP|STCH|HIST|SIZE|ORNM|ITAL|RAND|DTLS|FLAC|MGRK|SSTY|KERN|FWID|HWID|HALT|TWID|QWID|PWID|JUST|LFBD|OPBD|RTBD|PALT|PKNA|LTRA|LTRM|RTLA|RTLM|ABRV|ABVM|ABVS|VALT|VHAL
+TYPE	BlurEffect
+TYPE	NoiseEffect
+TYPE	Effect
+ENUM	ConstraintType	MIN|CENTER|MAX|STRETCH|SCALE
+TYPE	Paint
+TYPE	ShaderPropertyValue
+TYPE	LayoutGrid
+TYPE	VideoExportScale
+TYPE	VideoExportConstraint
+TYPE	ExportSettings
+ENUM	WindingRule	NONZERO|EVENODD
+TYPE	VectorPaths
+TYPE	LineHeight
+ENUM	LeadingTrim	CAP_HEIGHT|NONE
+ENUM	TextWrapStyle	AUTO|BALANCE|PRETTY
+TYPE	HyperlinkTarget
+TYPE	TextListOptions
+ENUM	BlendMode	PASS_THROUGH|NORMAL|DARKEN|MULTIPLY|LINEAR_BURN|COLOR_BURN|LIGHTEN|SCREEN|LINEAR_DODGE|COLOR_DODGE|OVERLAY|SOFT_LIGHT|HARD_LIGHT|DIFFERENCE|EXCLUSION|HUE|SATURATION|COLOR|LUMINOSITY
+ENUM	MaskType	ALPHA|VECTOR|LUMINANCE
+TYPE	TextStyleOverrideType
+TYPE	Reaction
+ENUM	VariableDataType	BOOLEAN|COLOR|EASING|EXPRESSION|FLOAT|STRING|TIMING|VARIABLE_ALIAS
+ENUM	ExpressionFunction	ADDITION|SUBTRACTION|MULTIPLICATION|DIVISION|EQUALS|NOT_EQUAL|LESS_THAN|LESS_THAN_OR_EQUAL|GREATER_THAN|GREATER_THAN_OR_EQUAL|AND|OR|VAR_MODE_LOOKUP|NEGATE|NOT
+TYPE	VariableValueWithExpression
+TYPE	ConditionalBlock
+TYPE	DevStatus
+TYPE	Action
+TYPE	Transition
+TYPE	Trigger
+ENUM	Navigation	NAVIGATE|SWAP|OVERLAY|SCROLL_TO|CHANGE_TO
+TYPE	AnimationStylePropValue
+TYPE	AvailableAnimationStylePropValue
+TYPE	AnimationStyleConfiguration
+TYPE	AppliedAnimationStyle
+TYPE	AnimationEntry
+TYPE	KeyframeValue
+ENUM	KeyframePropertyFieldName	CORNER_RADIUS|STROKE_WEIGHT|STACK_SPACING|STACK_PADDING_LEFT|STACK_PADDING_TOP|STACK_PADDING_RIGHT|STACK_PADDING_BOTTOM|WIDTH|HEIGHT|RECTANGLE_TOP_LEFT_CORNER_RADIUS|RECTANGLE_TOP_RIGHT_CORNER_RADIUS|RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS|RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS|BORDER_TOP_WEIGHT|BORDER_BOTTOM_WEIGHT|BORDER_LEFT_WEIGHT|BORDER_RIGHT_WEIGHT|STACK_COUNTER_SPACING|OPACITY|GRID_ROW_GAP|GRID_COLUMN_GAP|TRANSLATION_X|TRANSLATION_Y|TRANSLATION_XY|ROTATION|SCALE_X|SCALE_Y|SCALE_XY|PATH_TRIM_START|PATH_TRIM_END
+ENUM	EffectKeyframeFieldName	OFFSET_X|OFFSET_Y|RADIUS|SPREAD|COLOR|REFRACTION_RADIUS|SPECULAR_ANGLE|SPECULAR_INTENSITY|CHROMATIC_ABERRATION|SPLAY|REFRACTION_INTENSITY|START_RADIUS|NOISE_SIZE_X|NOISE_SIZE_Y|DENSITY|EFFECT_OPACITY|SECONDARY_COLOR
+TYPE	KeyframeField
+TYPE	ComponentPropKeyframeTracks
+TYPE	ComponentPropKeyframeBindings
+TYPE	PaintManualKeyframeTrack
+TYPE	PaintKeyframeBinding
+TYPE	EffectManualKeyframeTracks
+TYPE	EffectKeyframeBindings
+TYPE	ManualKeyframeTracks
+TYPE	Animations
+ENUM	OverflowDirection	NONE|HORIZONTAL|VERTICAL|BOTH
+ENUM	OverlayPositionType	CENTER|TOP_LEFT|TOP_CENTER|TOP_RIGHT|BOTTOM_LEFT|BOTTOM_CENTER|BOTTOM_RIGHT|MANUAL
+TYPE	OverlayBackground
+ENUM	OverlayBackgroundInteraction	NONE|CLOSE_ON_CLICK_OUTSIDE
+ENUM	PublishStatus	UNPUBLISHED|CURRENT|CHANGED
+TYPE	ConnectorEndpoint
+ENUM	ConnectorStrokeCap	NONE|ARROW_EQUILATERAL|ARROW_LINES|TRIANGLE_FILLED|DIAMOND_FILLED|CIRCLE_FILLED|ERD_ZERO_OR_ONE|ERD_EXACTLY_ONE|ERD_ZERO_OR_MORE|ERD_ONE_OR_MORE|ERD_ONE|ERD_MANY
+ENUM	VariableBindableNodeField	height|width|characters|itemSpacing|paddingLeft|paddingRight|paddingTop|paddingBottom|visible|cornerRadius|topLeftRadius|topRightRadius|bottomLeftRadius|bottomRightRadius|minWidth|maxWidth|minHeight|maxHeight|counterAxisSpacing|strokeWeight|strokeTopWeight|strokeRightWeight|strokeBottomWeight|strokeLeftWeight|opacity|gridRowGap|gridColumnGap
+ENUM	VariableBindableTextField	fontFamily|fontSize|fontStyle|fontWeight|letterSpacing|lineHeight|paragraphSpacing|paragraphIndent
+TYPE	VariableBindablePaintField
+TYPE	VariableBindablePaintStyleField
+TYPE	VariableBindableColorStopField
+ENUM	VariableBindableEffectField	color|radius|spread|offsetX|offsetY
+TYPE	VariableBindableEffectStyleField
+ENUM	VariableBindableLayoutGridField	sectionSize|count|offset|gutterSize
+TYPE	VariableBindableGridStyleField
+TYPE	VariableBindableComponentPropertyField
+TYPE	VariableBindableComponentPropertyDefinitionField
+ENUM	StrokeCap	NONE|ROUND|SQUARE|ARROW_LINES|ARROW_EQUILATERAL|DIAMOND_FILLED|TRIANGLE_FILLED|CIRCLE_FILLED
+ENUM	StrokeJoin	MITER|BEVEL|ROUND
+ENUM	HandleMirroring	NONE|ANGLE|ANGLE_AND_LENGTH
+TYPE	DetachedInfo
+TYPE	VariableWidthStrokeProperties
+TYPE	ComplexStrokeProperties
+TYPE	BrushStrokeProperties
+ENUM	AnnotationPropertyType	width|height|maxWidth|minWidth|maxHeight|minHeight|fills|strokes|effects|strokeWeight|cornerRadius|textStyleId|textAlignHorizontal|fontFamily|fontStyle|fontSize|fontWeight|lineHeight|letterSpacing|itemSpacing|padding|layoutMode|alignItems|opacity|mainComponent|gridRowGap|gridColumnGap|gridRowCount|gridColumnCount|gridRowAnchorIndex|gridColumnAnchorIndex|gridRowSpan|gridColumnSpan
+ENUM	MeasurementSide	TOP|RIGHT|BOTTOM|LEFT
+TYPE	MeasurementOffset
+ENUM	ComponentPropertyType	BOOLEAN|TEXT|INSTANCE_SWAP|VARIANT|SLOT
+TYPE	InstanceSwapPreferredValue
+TYPE	SlotSettings
+TYPE	ComponentPropertyOptions
+TYPE	ComponentPropertyDefinitions
+TYPE	ComponentProperties
+ENUM	VariableResolvedDataType	BOOLEAN|COLOR|EASING|FLOAT|STRING|TIMING
+TYPE	VariableComposedColor
+TYPE	VariableValue
+ENUM	VariableScope	ALL_SCOPES|TEXT_CONTENT|CORNER_RADIUS|WIDTH_HEIGHT|GAP|ALL_FILLS|FRAME_FILL|SHAPE_FILL|TEXT_FILL|STROKE_COLOR|STROKE_FLOAT|EFFECT_FLOAT|EFFECT_COLOR|OPACITY|COLOR_OPACITY|FONT_FAMILY|FONT_STYLE|FONT_WEIGHT|FONT_SIZE|LINE_HEIGHT|LETTER_SPACING|PARAGRAPH_SPACING|PARAGRAPH_INDENT
+ENUM	CodeSyntaxPlatform	WEB|ANDROID|iOS
+ENUM	AnnotationCategoryColor	yellow|orange|red|pink|violet|blue|teal|green
+TYPE	BaseNode
+TYPE	SceneNode
+TYPE	NodeType
+ENUM	StyleType	PAINT|TEXT|EFFECT|GRID|CUSTOM_ANIMATION
+ENUM	InheritedStyleField	fillStyleId|strokeStyleId|backgroundStyleId|textStyleId|effectStyleId|gridStyleId|strokeStyleId
+TYPE	BaseStyle
+TYPE	TransformModifier

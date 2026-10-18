@@ -1,0 +1,14 @@
+{
+  "name": "flue-figma-bridge-plugin",
+  "private": true,
+  "description": "Dev-only tooling for the Flue Figma plugin. The plugin itself has no build step and no runtime dependencies.",
+  "scripts": {
+    "typecheck": "tsc -p .",
+    "test": "node --test \"../tests/*.test.js\""
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "1.142.0",
+    "@types/node": "22",
+    "typescript": "5"
+  }
+}

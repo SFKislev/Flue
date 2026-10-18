@@ -1,0 +1,14 @@
+{
+  "name": "Flue Bridge",
+  "id": "flue-figma-bridge-dev",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "devAllowedDomains": ["http://localhost:47821"],
+    "reasoning": "Talks only to the Flue bridge daemon running on this computer (localhost)."
+  }
+}

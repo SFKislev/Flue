@@ -46,6 +46,8 @@ include-package-data = true
   "addon/*",
   "inprocess/*",
   "package/**/*",
+  "plugin/*",
+  "recipes/*",
 ]
 
 [tool.setuptools.packages.find]
